@@ -4,8 +4,11 @@ import os
 
 live_url = 'https://www.livefpl.net/leagues/88270'
 
+root_dir = ''
+#root_dir = '/home/tungdt/mysite/'
+
 def read_team_week():
-    with open('team_week.txt', 'r') as f:
+    with open(f'{root_dir}team_week.txt', 'r') as f:
         lines = f.readlines()
     team_week_names = [line[:-1] for line in lines]
     return team_week_names
@@ -13,7 +16,7 @@ def read_team_week():
 team_week_names = read_team_week()
 
 def match_round(league, round):
-    f = open(f'{league}/{round}.csv', 'r', encoding='utf-8-sig')
+    f = open(f'{root_dir}{league}/{round}.csv', 'r', encoding='utf-8-sig')
     lines = f.readlines()
     f.close()
     if len(lines[0].split(',')) == 4:
@@ -22,14 +25,14 @@ def match_round(league, round):
     return live_round(live_url, league, round)
 
 def get_teams_live(league, round):
-    f = open(f'{league}/{round}.csv', 'r', encoding='utf-8-sig')
+    f = open(f'{root_dir}{league}/{round}.csv', 'r', encoding='utf-8-sig')
     lines = f.readlines()
     f.close()
     return [line.strip().split(',') for line in lines]
 
 def get_rounds(league):
     csv_files = []
-    for f in os.listdir(league):
+    for f in os.listdir(f'{root_dir}{league}'):
         if f.endswith('.csv'):
             csv_files.append(int(f.split('.')[0]))
     csv_files.sort(reverse=True)
