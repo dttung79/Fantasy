@@ -1,0 +1,108 @@
+<main>
+  <h2>Tathy Autumn League</h2>
+  <table id="league-table"></table>
+  <style>
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: auto;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      text-align: center;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+      width: 120px;
+    }
+    td {
+      width: 80px;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .greater-score {
+      color: red;
+    }
+    .greater-score-team {
+      font-weight: bold;
+    }
+  </style>
+</main>
+<script>
+  function loadRoundData(round) {
+    return fetch(`/autumn/week/${round}`)
+      .then(response => response.json())
+      .then(data => {
+        const table = document.createElement('table');
+        data.forEach(row => {
+          const tableRow = table.insertRow();
+          const team1Cell = tableRow.insertCell();
+          team1Cell.textContent = row[0];
+          const team2Cell = tableRow.insertCell();
+          team2Cell.textContent = row[1];
+          const score1Cell = tableRow.insertCell();
+          score1Cell.textContent = row[2];
+          const score2Cell = tableRow.insertCell();
+          score2Cell.textContent = row[3];
+          if (row[2] > row[3]) {
+            score1Cell.classList.add('greater-score');
+            team1Cell.classList.add('greater-score-team');
+          } else if (row[3] > row[2]) {
+            score2Cell.classList.add('greater-score');
+            team2Cell.classList.add('greater-score-team');
+          }
+        });
+        return table;
+      });
+  }
+
+  function loadRound(round1, round2) {
+    const container = document.createElement('tr');
+    const td1 = document.createElement('td');
+    const td2 = document.createElement('td');
+    const roundHeader1 = document.createElement('h3');
+    roundHeader1.textContent = `Round ${round1}`;
+    const roundHeader2 = document.createElement('h3');
+    roundHeader2.textContent = `Round ${round2}`;
+    td1.appendChild(roundHeader1);
+    td2.appendChild(roundHeader2);
+    loadRoundData(round1)
+      .then(table => {
+        td1.appendChild(table);
+      });
+    loadRoundData(round2)
+      .then(table => {
+        td2.appendChild(table);
+      });
+    container.appendChild(td1);
+    container.appendChild(td2);
+    return container;
+  }
+
+  function loadRounds() {
+    fetch('/autumn/rounds')
+      .then(response => response.json())
+      .then(rounds => {
+        const tableContainer = document.getElementById('league-table');
+        for (let i = 0; i < rounds.length; i += 2) {
+          const round1 = rounds[i];
+          const round2 = rounds[i + 1];
+          const roundContainer = loadRound(round1, round2);
+          tableContainer.appendChild(roundContainer);
+        }
+      })
+      .catch(error => console.error(error));
+  }
+
+  loadRounds();
+</script>

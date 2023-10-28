@@ -1,0 +1,6309 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+.scrapper {
+         display: none;
+      }
+      #section-scrapper
+      {
+          display:block!important;
+      }
+
+}
+
+ .ccpa-msg-added
+  {
+      color:black!important;
+      display:none!important;
+  }
+
+.chip
+{
+
+    font-size: xx-small;
+    top: 25%;
+    margin-left: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    color: black;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color:lightgreen;
+
+}
+.chips_tb th,td
+{
+    height:unset;
+    padding:0;
+}
+td.cp li
+{
+    flex-direction:row!important;
+}
+td.cp p
+{
+    margin-bottom:unset!important;
+    right:unset!important;
+}
+/* This is the CSS that will change the color so add it to the css file */
+  .svg-fav {
+    cursor: pointer;
+  }
+
+  .red-svg {
+    fill: red;
+  }
+
+  /* Also not related but add this style to the body of the file I already sent under general styles */
+  body {
+    background-color: #fafdfc;
+  }
+
+  /* Add this to the general styles also */
+  tr:nth-child(odd) {
+    background-color: var(--white);
+  }
+
+    .heartdiv {
+    display:none;
+  margin:0 auto;
+  position: relative;
+}
+.clickable{
+    cursor:pointer;
+}
+
+table.dataTable tbody tr.selected {
+    background-color: aquamarine!important;
+}
+table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting_asc_disabled, table.dataTable thead .sorting_desc_disabled {
+    cursor: pointer;
+    background-image:none;
+    background-repeat: no-repeat;
+    background-position: center right;
+
+}
+table.dataTable thead .sorting {
+    background-image: none!important;
+}
+
+
+.example_responsive_1225 { width: 100%; height: 100px; }
+
+</style>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129091044-1"></script>
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129091044-1');
+</script>
+
+<script>
+	(function(d, x, dm) {
+		var xhr = new x();
+		var url = "https://api.enthusiastgaming.net/scripts/cdn.enthusiast.gg/script/eg-aps/release/eg-aps-bootstrap-v2.0.0.bundle.js?site=" + dm;
+		xhr.open("GET", url, true);
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4) {
+				if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+					var bsScript = d.createElement("script");
+					bsScript.type = "text/javascript";
+					bsScript.text = xhr.responseText;
+					d.head.appendChild(bsScript);
+					}
+				}
+			};
+		xhr.send(null);
+	})(document, XMLHttpRequest, 'livefpl.net');
+</script>
+
+<script>
+    (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KFZP6JP');
+</script>
+
+
+  <title>LiveFPL League</title>
+  <link rel="stylesheet" href="../css/league.css?version=194548" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Fonts from google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Icons from font awesome -->
+  <link rel="icon" href="../static/new_logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+              <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+              <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body >
+    <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFZP6JP" height="0" width="0" style="display:none;visibility:hidden">
+    </iframe>
+</noscript>
+  <!-- Navigation -->
+  <style>
+    /* Navigation Styles */
+.nav-img,
+.footer-img {
+  height: 3.2rem;
+  width: 18rem;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--white);
+  font-family: inherit;
+  margin: 0;
+  transition: all 0.2s ease;
+}
+
+.nav-dropbtn {
+  width: 106%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  background-color: aquamarine;
+  color: var(--black);
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: aquamarine;
+  min-width: 16rem;
+  box-shadow: var(--box-shadow-big);
+  z-index: 1;
+}
+
+.nav-dropdown-content a {
+  color: var(--black);
+  padding: 1.2rem 1.6rem;
+  display: block;
+  text-align: left;
+  font-weight: 500;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: var(--dark-green);
+  color: var(--white);
+}
+
+.nav-dropdown:hover .nav-dropdown-content {
+  display: block;
+}
+
+.nav-user {
+  display: flex;
+}
+.nav-user li {
+  height: 4.2rem;
+  width: 12.8rem;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-user li a {
+  color: var(--white);
+}
+
+.nav-user-signup {
+  background-color: var(--green);
+}
+
+.nav-user-login,
+.nav-user-signup {
+  transition: all 0.2s ease;
+}
+
+.nav-user-login:hover,
+.nav-user-signup:hover {
+  color: var(--black);
+  background-color: aquamarine;
+}
+.nav-user-login:active,
+.nav-user-signup:active {
+  color: var(--black);
+  background-color: var(--dark-green);
+}
+
+/* Responsive Navbar CSS */
+.topnav {
+  background-color: #35363c;
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  color: var(--white);
+  text-align: center;
+  padding: 0 1.6rem;
+  font-size: 1.6rem;
+}
+
+.topnav .icon {
+  display: none;
+}
+/* Support Styles */
+.support-us {
+  background-color: #c6ebdf;
+  color: var(--dark-green);
+  text-align: center;
+  padding: 0.4rem 0;
+}
+
+.support-us span a {
+  color: var(--red);
+}
+
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129091044-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129091044-1');
+</script>
+
+<section class="topnav" id="myTopnav">
+    <!-- Logo -->
+    
+    <a href="/rank" class="nav-logo-box">
+      <img class="nav-img" src="../static/livefpllogo.png" alt="livefpl logo" />
+
+    <p style="color:white">Live rank, leagues, stats and transfer planning!</p>
+    </a>
+
+
+    <!-- Nav Links -->
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn">Live Tools
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="nav-dropdown-content">
+          <a href="../rank">Live Rank</a>
+          <a href="../leagues">Live Leagues </a>
+          <a href="../games">Live Games & Bonus</a>
+          <a href="../whatif">What if? Rank for all Scenarios</a>
+          <a href="../autosubs">Live Autosubs</a>
+        </div>
+      </div>
+
+
+
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn">Transfer Planner
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="nav-dropdown-content">
+          <a href="../plan">Transfer Planner</a>
+          <a href="../ticker">Season Ticker</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropbtn">Chips/Captains/EOs
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="nav-dropdown-content">
+            <a href="../combos">Check Ownership Combinations</a>
+            <a href="../EO">Effective Ownerships</a>
+            <a href="../chips">Chip Usage and Templates</a>
+          <a href="../top10k">Top10k captains, Chips & EOs</a>
+
+          <a href="../dgw">Number of DGW/BGW Players in Ranks</a>
+          <a href="../Overall">Overall captains, Chips & EOs</a>
+
+          <a href="../local">Managers Around You</a>
+          <a href="../rank_tiers">Compare Different Rank Tiers</a>
+
+        </div>
+      </div>
+
+            <div class="nav-dropdown">
+        <button class="nav-dropbtn">Tracking Tools
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="nav-dropdown-content">
+          <a href="../favorites">Track Favorite Managers</a>
+          <a href="../elite">Legendary Managers</a>
+          <a href="../prices">Price Changes</a>
+
+        </div>
+      </div>
+
+
+
+    </div>
+    <!-- Sign up and Login -->
+    
+    <ul class="nav-user">
+      <li class="nav-user-login">
+        <a href="../login">Login</a>
+      </li>
+      <li class="nav-user-signup">
+        <a href="../signup">Signup</a>
+      </li>
+    </ul>
+    
+    <!-- For nav burger -->
+    <!-- For nav burger -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()"
+        >&#9776;</a
+      >
+  </section>
+
+  <!-- Support us -->
+  
+  <p class="support-us">
+    If you like liveFPL and would like to navigate it the full year without
+    ads, feel free to support us <span><a href="../remove_ads">here</a></span>
+  </p>
+  
+
+<div>
+<div id='div-gpt-ad-fpl-4' class="ads"></div>
+
+</div>
+
+  <!-- League Content -->
+  <section class="league">
+
+                <h4 class="post-title">Active League: Fantasy XXL   [autosubs included!]  </h4>
+                
+                
+
+                <h4> </h4> 
+                </section>
+
+                
+  <section class="league">
+    <div class="league-top">
+      <div class="table-view">
+        Include Live Autosubs
+        <div class="table-view-btns">
+            
+          <button class="btn-not-active" onClick="include_subs(0)">No</button>
+          <button class="btn-active">Yes</button>
+          
+
+        </div>
+
+      </div>
+
+
+      <!-- The Select League -->
+      <div class="select-league">
+        Active League:
+        <select class="select-option" onchange="window.location='../leagues/'+this.value;">
+          <option value="0">Choose a League</option>
+          
+        </select>
+      </div>
+
+    </div>
+    <!-- Option to select players based on conditions -->
+    <div class="league middle">
+      <div class="highlight">
+        <div class="highlight-select">
+          Count & Color managers who
+          <select id="first" onChange ="Populate()"><option value="o" >own</option><option value="c" >captained</option><option value="s" >started</option><option value="b" >benched</option></select>
+          <select id="second"  onChange="highlight()"></select>
+        </div>
+
+        <div class="count" id="count">Count <span>0/0 = 0.00%</span></div>
+      </div>
+      <!-- Calculate the EO -->
+      <div class="calculate-eo" >
+        Calculate Effective Ownerships including
+
+          <select class="calculate-select-option" id="third"  onChange="change_end(this.value)"><option value=-1 >all</option><option value=2 >top 2</option><option value=3 >top 3</option><option value=4 >top 4</option><option value=5 >top 5</option><option value=6 >top 6</option><option value=7 >top 7</option></select>
+        managers
+<button id="modalOpen" class="open-modal">Ownership/Captains</button>
+<button id="modalOpen2" class="open-modal">Team 1 vs. Team 2</button>
+<button class="open-modal" onClick = "export2()" >Export to Excel</button>
+
+        <!-- The Modal -->
+        <div id="theModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-head">
+              <h2>Chips + Ownerships + Effective Ownerships in league Fantasy XXL</h2>
+              <h4 id="who_own">stats include
+        <select class="calculate-select-option" id="third2"  onChange="change_end(this.value)"><option value=-1 >all</option><option value=2 >top 2</option><option value=3 >top 3</option><option value=4 >top 4</option><option value=5 >top 5</option><option value=6 >top 6</option><option value=7 >top 7</option></select>
+
+              managers</h4>
+              <span class="close-modal">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 1.875C5.51992 1.875 1.875 5.51992 1.875 10C1.875 14.4801 5.51992 18.125 10 18.125C14.4801 18.125 18.125 14.4801 18.125 10C18.125 5.51992 14.4801 1.875 10 1.875ZM13.384 12.5L12.5 13.384L10 10.884L7.5 13.384L6.61602 12.5L9.11602 10L6.61602 7.5L7.5 6.61602L10 9.11602L12.5 6.61602L13.384 7.5L10.884 10L13.384 12.5Z"
+                    fill="#FF325A" />
+                </svg>
+
+              </span>
+            </div>
+            <div class="modal-body" >
+                <table class="chips_tb" id ="chips_table" style="table-layout:fixed">
+                    <thead>
+                    <tr><th>Chip</th><th>Percentage</th></tr></thead>
+                    <tbody id="chips_body">
+
+                </tbody>
+
+                </table>
+              <table id="own" >
+                <thead>
+                  <tr>
+                    <th>Player</th>
+                    <th>Owned By</th>
+                    <th>Started By</th>
+                    <th>Captained By</th>
+                    <th>Effective Ownership</th>
+                  </tr>
+                </thead>
+                <tbody id="ownership_table">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+      <div id="theModal2" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-head">
+              <h2>Compare your team vs others in your league</h2>
+              <h4>Differences between teams are highlighted, similarities are greyed out</h4>
+
+              <span class="close-modal">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 1.875C5.51992 1.875 1.875 5.51992 1.875 10C1.875 14.4801 5.51992 18.125 10 18.125C14.4801 18.125 18.125 14.4801 18.125 10C18.125 5.51992 14.4801 1.875 10 1.875ZM13.384 12.5L12.5 13.384L10 10.884L7.5 13.384L6.61602 12.5L9.11602 10L6.61602 7.5L7.5 6.61602L10 9.11602L12.5 6.61602L13.384 7.5L10.884 10L13.384 12.5Z"
+                    fill="#FF325A" />
+                </svg>
+
+              </span>
+            </div>
+        <div class="modal-body" style="display:flex">
+            <div class="column" style="width:50%">
+                <select id="home_team" onChange="compare('h',this.value)"><option value=-1 >Choose Manager</option><option value = 3171756,0>Doan Trung Tung</option><option value = 5967497,1>Hùng Đỗ Hoàng Phi</option><option value = 5912797,2>Tung Nguyen Son</option><option value = 7607842,3>Walker Johnny</option><option value = 5974271,4>Tuấn Anh Vũ</option><option value = 7976221,5>Trung hieu Tran</option><option value = 6417730,6>Nam Morningstar</option><option value = 6991796,7>Duy Thái</option></select>
+              <table>
+                <thead>
+                  <tr>
+                    <th id="th-h"></th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                    
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-0"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-1"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-2"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-3"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-4"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-5"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-6"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-7"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-8"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-9"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-10"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-11"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-12"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-13"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-h-14"></td>
+                  </tr>
+                  
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-0"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-1"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-2"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-3"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-4"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-5"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-6"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-7"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-8"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-9"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-10"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-11"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-12"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-13"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-h2-14"></td>
+                  </tr>
+                  
+
+                </tbody>
+              </table>
+            </div>
+            <div class="column" style="width:50%">
+                <select id="away_team" onChange="compare('a',this.value)"><option value=-1 >Choose Manager</option><option value = 3171756,0>Doan Trung Tung</option><option value = 5967497,1>Hùng Đỗ Hoàng Phi</option><option value = 5912797,2>Tung Nguyen Son</option><option value = 7607842,3>Walker Johnny</option><option value = 5974271,4>Tuấn Anh Vũ</option><option value = 7976221,5>Trung hieu Tran</option><option value = 6417730,6>Nam Morningstar</option><option value = 6991796,7>Duy Thái</option></select>
+              <table>
+                <thead>
+                  <tr>
+                    <th id="th-a"></th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-0"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-1"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-2"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-3"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-4"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-5"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-6"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-7"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-8"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-9"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-10"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-11"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-12"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-13"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" style="display:none" id="td-a-14"></td>
+                  </tr>
+                  
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-0"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-1"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-2"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-3"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-4"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-5"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-6"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-7"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-8"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-9"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-10"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-11"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-12"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-13"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="cp" id="td-a2-14"></td>
+                  </tr>
+                  
+
+                </tbody>
+              </table>
+            </div></div>
+
+          </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <!-- The League Table -->
+        <table style="min-width: 100%;table-layout:fixed;" id="livetable" >
+            
+                  
+                  
+          <p class="table-sort-info">Click a row to view team + EOs in league. Click any header to sort.
+          </p>
+          <div id='div-gpt-ad-fpl-2' class="ads"></div>
+
+
+          <thead>
+            <!-- Table Head -->
+            <tr class="table-head">
+              <th class="table-rank" style="width:4%">Rank<p style="font-size:1rem">[old]</p></th>
+              <th class="notexport" style="width:2.5%"></th>
+              <th class="table-rank" style="display:none">Old Rank</th>
+              <th  style="display:none;text-align: center;width:0%;overflow-wrap: break-word;">Manager</th>
+              <th  style="text-align: center;display:none">Team name</th>
+              <th class="notexport" style="width:20%">Team</th>
+
+              <th class="table-total" style="width:5%">Total</th>
+              <th class="table-gameweek" style="width:3%">GW</th>
+              <th class="table-hits" style="width:3%">Hits</th>
+              <th style="width:3%">Chip</th>
+              <th style="width:7%">Captain</th>
+              <th style="width:6%">Vice</th>
+
+              <th  class="table-transfers" style="width:10%">Transfers</th>
+              <th style="width:5%">Played</th>
+              <th  style="text-align: center;display:none" class='notexport'>EO</th>
+                    <th  style="text-align: center;display:none" class='notexport'>Bench</th>
+                    <th  style="text-align: center;display:none">Team</th>
+                    <th  style="text-align: center;display:none">Bench</th>
+            </tr>
+          </thead>
+          <!-- Table Body -->
+          <tbody>
+            
+
+            <tr class ="clickable" id ="3171756" >
+              <td class="table-rank" data-order="1">1<img class="rank-svg" src="../static/caret-up.svg" alt="same-svg">
+              <p style="font-size:1rem">[3]</p>
+
+
+              </td>
+
+              <td style="text-align: right;">
+              
+              
+                          <svg
+
+                          onclick="favorite(event,3171756,'Doan Trung Tung')"
+
+  width="20"
+  height="20"
+  viewBox="0 0 16 16"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    id="i_3171756"
+    class=svg-fav
+
+    d="M7.99998 14C7.79926 13.9997 7.60326 13.9391 7.43748 13.8259C4.98154 12.1587 3.91811 11.0156 3.33154 10.3009C2.08154 8.7775 1.48311 7.21344 1.49998 5.51969C1.51967 3.57875 3.07686 2 4.97123 2C6.34873 2 7.30279 2.77594 7.85842 3.42219C7.87602 3.44245 7.89777 3.4587 7.92219 3.46984C7.94661 3.48098 7.97314 3.48674 7.99998 3.48674C8.02682 3.48674 8.05335 3.48098 8.07778 3.46984C8.1022 3.4587 8.12394 3.44245 8.14154 3.42219C8.69717 2.77531 9.65123 2 11.0287 2C12.9231 2 14.4803 3.57875 14.5 5.52C14.5169 7.21406 13.9178 8.77813 12.6684 10.3013C12.0819 11.0159 11.0184 12.1591 8.56248 13.8263C8.39667 13.9393 8.20067 13.9998 7.99998 14V14Z"
+    fill="#676C72"
+  />
+</svg></td>
+<td  style="display:none" >3</td>
+              <td style="overflow-wrap: break-word;display:none">Doan Trung Tung</td>
+                          <td style="display:none">savapain</td>
+              <td>
+                <a target="_blank" href="https://fantasy.premierleague.com/entry/3171756/event/9">
+                  <h3 class="table-team-name" >savapain</h3>
+                </a>
+                <a target="_blank" href="https://www.livefpl.net/3171756">
+                  <p class="table-user-name">Doan Trung Tung</p>
+                </a>
+                <a target="_blank" style="    display: flex;align-items: center;">
+                    
+                    <p style="font-size:smaller">TV: 101.7 Yet: <p class="chip">BB</p> <p class="chip">TC</p> </p>
+
+                    
+
+                  </a>
+                  
+                  <a target="_blank" style=" color:black;   display: flex;">
+                    <p>Live OR: 3,796,115</p>
+                    </a>
+                    
+
+                    
+
+                    
+
+                    
+              </td>
+
+                <td class="table-total" id="3171756_total">503</td>
+              <td class="table-gameweek" id="3171756_gw">93</td>
+              <td class="table-hits" id="3171756_hit">0</tdclas>
+
+              <td class="table-chips" id="3171756_chip"> </td>
+              <td class="table-captain" id="3171756_cap">Son</td>
+              <td class="table-vice-captain" id="3171756_vc">Salah</td>
+
+              <td>
+                <ul class="table-transfers">
+                    
+
+                          
+                          <li>Areola > Turner</li>
+                          
+
+                          
+
+                </ul>
+              </td>
+              <td class="table-chips" id="3171756_played">12/12</td>
+              
+                          
+                          
+                          <td style="display:none">*Turner*,*Udogie*,*Cash*,*Burn*,*Haaland*,*Maddison*,*Neto*,*Salah*,*Son*,*Solanke*,*Watkins*,*Son*,</td>
+                          <td style="display:none">*Leno*,*Andersen*,*Andreas*,*Kaboré*,</td>
+                          <td style="display:none">Turner, Udogie, Cash, Burn, Haaland, Maddison, Neto, Salah, Son, Solanke, Watkins</td>
+                          <td style="display:none">Leno, Andersen, Andreas, Kaboré</td>
+
+
+            </tr>
+
+            
+
+            <tr class ="clickable" id ="5967497" >
+              <td class="table-rank" data-order="2">2<img class="rank-svg" src="../static/caret-same.svg" alt="same-svg">
+              <p style="font-size:1rem">[2]</p>
+
+
+              </td>
+
+              <td style="text-align: right;">
+              
+              
+                          <svg
+
+                          onclick="favorite(event,5967497,'Hùng Đỗ Hoàng Phi')"
+
+  width="20"
+  height="20"
+  viewBox="0 0 16 16"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    id="i_5967497"
+    class=svg-fav
+
+    d="M7.99998 14C7.79926 13.9997 7.60326 13.9391 7.43748 13.8259C4.98154 12.1587 3.91811 11.0156 3.33154 10.3009C2.08154 8.7775 1.48311 7.21344 1.49998 5.51969C1.51967 3.57875 3.07686 2 4.97123 2C6.34873 2 7.30279 2.77594 7.85842 3.42219C7.87602 3.44245 7.89777 3.4587 7.92219 3.46984C7.94661 3.48098 7.97314 3.48674 7.99998 3.48674C8.02682 3.48674 8.05335 3.48098 8.07778 3.46984C8.1022 3.4587 8.12394 3.44245 8.14154 3.42219C8.69717 2.77531 9.65123 2 11.0287 2C12.9231 2 14.4803 3.57875 14.5 5.52C14.5169 7.21406 13.9178 8.77813 12.6684 10.3013C12.0819 11.0159 11.0184 12.1591 8.56248 13.8263C8.39667 13.9393 8.20067 13.9998 7.99998 14V14Z"
+    fill="#676C72"
+  />
+</svg></td>
+<td  style="display:none" >2</td>
+              <td style="overflow-wrap: break-word;display:none">Hùng Đỗ Hoàng Phi</td>
+                          <td style="display:none">PhiHung50</td>
+              <td>
+                <a target="_blank" href="https://fantasy.premierleague.com/entry/5967497/event/9">
+                  <h3 class="table-team-name" >PhiHung50</h3>
+                </a>
+                <a target="_blank" href="https://www.livefpl.net/5967497">
+                  <p class="table-user-name">Hùng Đỗ Hoàng Phi</p>
+                </a>
+                <a target="_blank" style="    display: flex;align-items: center;">
+                    
+                    <p style="font-size:smaller">TV: 99.4 Yet: <p class="chip">BB</p> <p class="chip">TC</p> </p>
+
+                    
+
+                  </a>
+                  
+                  <a target="_blank" style=" color:black;   display: flex;">
+                    <p>Live OR: 3,942,811</p>
+                    </a>
+                    
+
+                    
+
+                    
+
+                    
+              </td>
+
+                <td class="table-total" id="5967497_total">500</td>
+              <td class="table-gameweek" id="5967497_gw">72</td>
+              <td class="table-hits" id="5967497_hit">0</tdclas>
+
+              <td class="table-chips" id="5967497_chip"> </td>
+              <td class="table-captain" id="5967497_cap">Haaland</td>
+              <td class="table-vice-captain" id="5967497_vc">Burn</td>
+
+              <td>
+                <ul class="table-transfers">
+                    
+
+                          
+                          <li>Estupiñan > Burn</li>
+                          
+
+                          
+
+                </ul>
+              </td>
+              <td class="table-chips" id="5967497_played">12/12</td>
+              
+                          
+                          
+                          <td style="display:none">*José Sá*,*Akanji*,*Zouma*,*Aké*,*Pedro Porro*,*Burn*,*Son*,*Sterling*,*Mbeumo*,*Watkins*,*Haaland*,*Haaland*,</td>
+                          <td style="display:none">*Vicario*,*March*,*Nketiah*,*Eze*,</td>
+                          <td style="display:none">José Sá, Akanji, Zouma, Aké, Pedro Porro, Burn, Son, Sterling, Mbeumo, Watkins, Haaland</td>
+                          <td style="display:none">Vicario, March, Nketiah, Eze</td>
+
+
+            </tr>
+
+            
+
+            <tr class ="clickable" id ="5912797" >
+              <td class="table-rank" data-order="3">3<img class="rank-svg" src="../static/caret-down.svg" alt="same-svg">
+              <p style="font-size:1rem">[1]</p>
+
+
+              </td>
+
+              <td style="text-align: right;">
+              
+              
+                          <svg
+
+                          onclick="favorite(event,5912797,'Tung Nguyen Son')"
+
+  width="20"
+  height="20"
+  viewBox="0 0 16 16"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    id="i_5912797"
+    class=svg-fav
+
+    d="M7.99998 14C7.79926 13.9997 7.60326 13.9391 7.43748 13.8259C4.98154 12.1587 3.91811 11.0156 3.33154 10.3009C2.08154 8.7775 1.48311 7.21344 1.49998 5.51969C1.51967 3.57875 3.07686 2 4.97123 2C6.34873 2 7.30279 2.77594 7.85842 3.42219C7.87602 3.44245 7.89777 3.4587 7.92219 3.46984C7.94661 3.48098 7.97314 3.48674 7.99998 3.48674C8.02682 3.48674 8.05335 3.48098 8.07778 3.46984C8.1022 3.4587 8.12394 3.44245 8.14154 3.42219C8.69717 2.77531 9.65123 2 11.0287 2C12.9231 2 14.4803 3.57875 14.5 5.52C14.5169 7.21406 13.9178 8.77813 12.6684 10.3013C12.0819 11.0159 11.0184 12.1591 8.56248 13.8263C8.39667 13.9393 8.20067 13.9998 7.99998 14V14Z"
+    fill="#676C72"
+  />
+</svg></td>
+<td  style="display:none" >1</td>
+              <td style="overflow-wrap: break-word;display:none">Tung Nguyen Son</td>
+                          <td style="display:none">Nani29</td>
+              <td>
+                <a target="_blank" href="https://fantasy.premierleague.com/entry/5912797/event/9">
+                  <h3 class="table-team-name" >Nani29</h3>
+                </a>
+                <a target="_blank" href="https://www.livefpl.net/5912797">
+                  <p class="table-user-name">Tung Nguyen Son</p>
+                </a>
+                <a target="_blank" style="    display: flex;align-items: center;">
+                    
+                    <p style="font-size:smaller">TV: 101.1 Yet: <p class="chip">WC1</p> <p class="chip">BB</p> <p class="chip">FH</p> <p class="chip">TC</p> </p>
+
+                    
+
+                  </a>
+                  
+                  <a target="_blank" style=" color:black;   display: flex;">
+                    <p>Live OR: 4,555,511</p>
+                    </a>
+                    
+
+                    
+
+                    
+
+                    
+              </td>
+
+                <td class="table-total" id="5912797_total">491</td>
+              <td class="table-gameweek" id="5912797_gw">56</td>
+              <td class="table-hits" id="5912797_hit">0</tdclas>
+
+              <td class="table-chips" id="5912797_chip"> </td>
+              <td class="table-captain" id="5912797_cap">Haaland</td>
+              <td class="table-vice-captain" id="5912797_vc">Salah</td>
+
+              <td>
+                <ul class="table-transfers">
+                    
+
+                          
+
+                          
+
+                </ul>
+              </td>
+              <td class="table-chips" id="5912797_played">12/12</td>
+              
+                          
+                          
+                          <td style="display:none">*Leno*,*T.Silva*,*White*,*Saliba*,*Saka*,*Zaniolo*,*Neto*,*Salah*,*J.Alvarez*,*Haaland*,*Isak*,*Haaland*,</td>
+                          <td style="display:none">*A.Becker*,*Gvardiol*,*Enzo*,*Lamptey*,</td>
+                          <td style="display:none">Leno, T.Silva, White, Saliba, Saka, Zaniolo, Neto, Salah, J.Alvarez, Haaland, Isak</td>
+                          <td style="display:none">A.Becker, Gvardiol, Enzo, Lamptey</td>
+
+
+            </tr>
+
+            
+
+            <tr class ="clickable" id ="7607842" >
+              <td class="table-rank" data-order="4">4<img class="rank-svg" src="../static/caret-same.svg" alt="same-svg">
+              <p style="font-size:1rem">[4]</p>
+
+
+              </td>
+
+              <td style="text-align: right;">
+              
+              
+                          <svg
+
+                          onclick="favorite(event,7607842,'Walker Johnny')"
+
+  width="20"
+  height="20"
+  viewBox="0 0 16 16"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    id="i_7607842"
+    class=svg-fav
+
+    d="M7.99998 14C7.79926 13.9997 7.60326 13.9391 7.43748 13.8259C4.98154 12.1587 3.91811 11.0156 3.33154 10.3009C2.08154 8.7775 1.48311 7.21344 1.49998 5.51969C1.51967 3.57875 3.07686 2 4.97123 2C6.34873 2 7.30279 2.77594 7.85842 3.42219C7.87602 3.44245 7.89777 3.4587 7.92219 3.46984C7.94661 3.48098 7.97314 3.48674 7.99998 3.48674C8.02682 3.48674 8.05335 3.48098 8.07778 3.46984C8.1022 3.4587 8.12394 3.44245 8.14154 3.42219C8.69717 2.77531 9.65123 2 11.0287 2C12.9231 2 14.4803 3.57875 14.5 5.52C14.5169 7.21406 13.9178 8.77813 12.6684 10.3013C12.0819 11.0159 11.0184 12.1591 8.56248 13.8263C8.39667 13.9393 8.20067 13.9998 7.99998 14V14Z"
+    fill="#676C72"
+  />
+</svg></td>
+<td  style="display:none" >4</td>
+              <td style="overflow-wrap: break-word;display:none">Walker Johnny</td>
+                          <td style="display:none">Onion XXL</td>
+              <td>
+                <a target="_blank" href="https://fantasy.premierleague.com/entry/7607842/event/9">
+                  <h3 class="table-team-name" >Onion XXL</h3>
+                </a>
+                <a target="_blank" href="https://www.livefpl.net/7607842">
+                  <p class="table-user-name">Walker Johnny</p>
+                </a>
+                <a target="_blank" style="    display: flex;align-items: center;">
+                    
+                    <p style="font-size:smaller">TV: 100.0 Yet: <p class="chip">WC1</p> <p class="chip">BB</p> <p class="chip">FH</p> <p class="chip">TC</p> </p>
+
+                    
+
+                  </a>
+                  
+                  <a target="_blank" style=" color:black;   display: flex;">
+                    <p>Live OR: 5,558,395</p>
+                    </a>
+                    
+
+                    
+
+                    
+
+                    
+              </td>
+
+                <td class="table-total" id="7607842_total">474</td>
+              <td class="table-gameweek" id="7607842_gw">67</td>
+              <td class="table-hits" id="7607842_hit">0</tdclas>
+
+              <td class="table-chips" id="7607842_chip"> </td>
+              <td class="table-captain" id="7607842_cap">Haaland</td>
+              <td class="table-vice-captain" id="7607842_vc">Darwin</td>
+
+              <td>
+                <ul class="table-transfers">
+                    
+
+                          
+                          <li>Saliba > Pedro Porro</li>
+                          
+                          <li>Casemiro > Rice</li>
+                          
+
+                          
+
+                </ul>
+              </td>
+              <td class="table-chips" id="7607842_played">12/12</td>
+              
+                          
+                          
+                          <td style="display:none">*José Sá*,*Van de Ven*,*Gvardiol*,*Trippier*,*Foden*,*Rice*,*Ward-Prowse*,*Rashford*,*Watkins*,*Haaland*,*Darwin*,*Haaland*,</td>
+                          <td style="display:none">*Shea*,*Zouma*,*Mitoma*,*Pedro Porro*,</td>
+                          <td style="display:none">José Sá, Van de Ven, Gvardiol, Trippier, Foden, Rice, Ward-Prowse, Rashford, Watkins, Haaland, Darwin</td>
+                          <td style="display:none">Shea, Zouma, Mitoma, Pedro Porro</td>
+
+
+            </tr>
+
+            
+
+            <tr class ="clickable" id ="5974271" >
+              <td class="table-rank" data-order="5">5<img class="rank-svg" src="../static/caret-same.svg" alt="same-svg">
+              <p style="font-size:1rem">[5]</p>
+
+
+              </td>
+
+              <td style="text-align: right;">
+              
+              
+                          <svg
+
+                          onclick="favorite(event,5974271,'Tuấn Anh Vũ')"
+
+  width="20"
+  height="20"
+  viewBox="0 0 16 16"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    id="i_5974271"
+    class=svg-fav
+
+    d="M7.99998 14C7.79926 13.9997 7.60326 13.9391 7.43748 13.8259C4.98154 12.1587 3.91811 11.0156 3.33154 10.3009C2.08154 8.7775 1.48311 7.21344 1.49998 5.51969C1.51967 3.57875 3.07686 2 4.97123 2C6.34873 2 7.30279 2.77594 7.85842 3.42219C7.87602 3.44245 7.89777 3.4587 7.92219 3.46984C7.94661 3.48098 7.97314 3.48674 7.99998 3.48674C8.02682 3.48674 8.05335 3.48098 8.07778 3.46984C8.1022 3.4587 8.12394 3.44245 8.14154 3.42219C8.69717 2.77531 9.65123 2 11.0287 2C12.9231 2 14.4803 3.57875 14.5 5.52C14.5169 7.21406 13.9178 8.77813 12.6684 10.3013C12.0819 11.0159 11.0184 12.1591 8.56248 13.8263C8.39667 13.9393 8.20067 13.9998 7.99998 14V14Z"
+    fill="#676C72"
+  />
+</svg></td>
+<td  style="display:none" >5</td>
+              <td style="overflow-wrap: break-word;display:none">Tuấn Anh Vũ</td>
+                          <td style="display:none">KytOggy</td>
+              <td>
+                <a target="_blank" href="https://fantasy.premierleague.com/entry/5974271/event/9">
+                  <h3 class="table-team-name" >KytOggy</h3>
+                </a>
+                <a target="_blank" href="https://www.livefpl.net/5974271">
+                  <p class="table-user-name">Tuấn Anh Vũ</p>
+                </a>
+                <a target="_blank" style="    display: flex;align-items: center;">
+                    
+                    <p style="font-size:smaller">TV: 100.9 Yet: <p class="chip">WC1</p> <p class="chip">FH</p> <p class="chip">TC</p> </p>
+
+                    
+
+                  </a>
+                  
+                  <a target="_blank" style=" color:black;   display: flex;">
+                    <p>Live OR: 6,167,092</p>
+                    </a>
+                    
+
+                    
+
+                    
+
+                    
+              </td>
+
+                <td class="table-total" id="5974271_total">462</td>
+              <td class="table-gameweek" id="5974271_gw">70</td>
+              <td class="table-hits" id="5974271_hit">0</tdclas>
+
+              <td class="table-chips" id="5974271_chip"> </td>
+              <td class="table-captain" id="5974271_cap">Haaland</td>
+              <td class="table-vice-captain" id="5974271_vc">Vicario</td>
+
+              <td>
+                <ul class="table-transfers">
+                    
+
+                          
+
+                          
+
+                </ul>
+              </td>
+              <td class="table-chips" id="5974271_played">12/12</td>
+              
+                          
+                          
+                          <td style="display:none">*Vicario*,*Tarkowski*,*Trippier*,*Saliba*,*Mbeumo*,*Foden*,*Maddison*,*Mitoma*,*Calvert-Lewin*,*Haaland*,*Wissa*,*Haaland*,</td>
+                          <td style="display:none">*A.Becker*,*Saka*,*Estupiñan*,*Udogie*,</td>
+                          <td style="display:none">Vicario, Tarkowski, Trippier, Saliba, Mbeumo, Foden, Maddison, Mitoma, Calvert-Lewin, Haaland, Wissa</td>
+                          <td style="display:none">A.Becker, Saka, Estupiñan, Udogie</td>
+
+
+            </tr>
+
+            
+
+            <tr class ="clickable" id ="7976221" >
+              <td class="table-rank" data-order="6">6<img class="rank-svg" src="../static/caret-same.svg" alt="same-svg">
+              <p style="font-size:1rem">[6]</p>
+
+
+              </td>
+
+              <td style="text-align: right;">
+              
+              
+                          <svg
+
+                          onclick="favorite(event,7976221,'Trung hieu Tran')"
+
+  width="20"
+  height="20"
+  viewBox="0 0 16 16"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    id="i_7976221"
+    class=svg-fav
+
+    d="M7.99998 14C7.79926 13.9997 7.60326 13.9391 7.43748 13.8259C4.98154 12.1587 3.91811 11.0156 3.33154 10.3009C2.08154 8.7775 1.48311 7.21344 1.49998 5.51969C1.51967 3.57875 3.07686 2 4.97123 2C6.34873 2 7.30279 2.77594 7.85842 3.42219C7.87602 3.44245 7.89777 3.4587 7.92219 3.46984C7.94661 3.48098 7.97314 3.48674 7.99998 3.48674C8.02682 3.48674 8.05335 3.48098 8.07778 3.46984C8.1022 3.4587 8.12394 3.44245 8.14154 3.42219C8.69717 2.77531 9.65123 2 11.0287 2C12.9231 2 14.4803 3.57875 14.5 5.52C14.5169 7.21406 13.9178 8.77813 12.6684 10.3013C12.0819 11.0159 11.0184 12.1591 8.56248 13.8263C8.39667 13.9393 8.20067 13.9998 7.99998 14V14Z"
+    fill="#676C72"
+  />
+</svg></td>
+<td  style="display:none" >6</td>
+              <td style="overflow-wrap: break-word;display:none">Trung hieu Tran</td>
+                          <td style="display:none">FPL Galaticos</td>
+              <td>
+                <a target="_blank" href="https://fantasy.premierleague.com/entry/7976221/event/9">
+                  <h3 class="table-team-name" >FPL Galaticos</h3>
+                </a>
+                <a target="_blank" href="https://www.livefpl.net/7976221">
+                  <p class="table-user-name">Trung hieu Tran</p>
+                </a>
+                <a target="_blank" style="    display: flex;align-items: center;">
+                    
+                    <p style="font-size:smaller">TV: 100.6 Yet: <p class="chip">WC1</p> <p class="chip">BB</p> <p class="chip">FH</p> </p>
+
+                    
+
+                  </a>
+                  
+                  <a target="_blank" style=" color:black;   display: flex;">
+                    <p>Live OR: 6,855,642</p>
+                    </a>
+                    
+
+                    
+
+                    
+
+                    
+              </td>
+
+                <td class="table-total" id="7976221_total">446</td>
+              <td class="table-gameweek" id="7976221_gw">61</td>
+              <td class="table-hits" id="7976221_hit">-4</tdclas>
+
+              <td class="table-chips" id="7976221_chip"> </td>
+              <td class="table-captain" id="7976221_cap">Haaland</td>
+              <td class="table-vice-captain" id="7976221_vc">Son</td>
+
+              <td>
+                <ul class="table-transfers">
+                    
+
+                          
+                          <li>Diaby > Gibbs-White</li>
+                          
+                          <li>A.Doucoure > Neto</li>
+                          
+
+                          
+
+                </ul>
+              </td>
+              <td class="table-chips" id="7976221_played">12/12</td>
+              
+                          
+                          
+                          <td style="display:none">*Turner*,*Udogie*,*Trippier*,*Andersen*,*Gibbs-White*,*Son*,*Neto*,*Gordon*,*Darwin*,*Haaland*,*Højlund*,*Haaland*,</td>
+                          <td style="display:none">*Ederson M.*,*Bowen*,*Estupiñan*,*Chilwell*,</td>
+                          <td style="display:none">Turner, Udogie, Trippier, Andersen, Gibbs-White, Son, Neto, Gordon, Darwin, Haaland, Højlund</td>
+                          <td style="display:none">Ederson M., Bowen, Estupiñan, Chilwell</td>
+
+
+            </tr>
+
+            
+
+            <tr class ="clickable" id ="6417730"  style="vertical-align:baseline" >
+              <td class="table-rank" data-order="7">7<img class="rank-svg" src="../static/caret-same.svg" alt="same-svg">
+              <p style="font-size:1rem">[7]</p>
+
+
+              </td>
+
+              <td style="text-align: right;">
+              
+              
+                          <svg
+
+                          onclick="favorite(event,6417730,'Nam Morningstar')"
+
+  width="20"
+  height="20"
+  viewBox="0 0 16 16"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    id="i_6417730"
+    class=svg-fav
+
+    d="M7.99998 14C7.79926 13.9997 7.60326 13.9391 7.43748 13.8259C4.98154 12.1587 3.91811 11.0156 3.33154 10.3009C2.08154 8.7775 1.48311 7.21344 1.49998 5.51969C1.51967 3.57875 3.07686 2 4.97123 2C6.34873 2 7.30279 2.77594 7.85842 3.42219C7.87602 3.44245 7.89777 3.4587 7.92219 3.46984C7.94661 3.48098 7.97314 3.48674 7.99998 3.48674C8.02682 3.48674 8.05335 3.48098 8.07778 3.46984C8.1022 3.4587 8.12394 3.44245 8.14154 3.42219C8.69717 2.77531 9.65123 2 11.0287 2C12.9231 2 14.4803 3.57875 14.5 5.52C14.5169 7.21406 13.9178 8.77813 12.6684 10.3013C12.0819 11.0159 11.0184 12.1591 8.56248 13.8263C8.39667 13.9393 8.20067 13.9998 7.99998 14V14Z"
+    fill="#676C72"
+  />
+</svg></td>
+<td  style="display:none" >7</td>
+              <td style="overflow-wrap: break-word;display:none">Nam Morningstar</td>
+                          <td style="display:none">Nam FC</td>
+              <td>
+                <a target="_blank" href="https://fantasy.premierleague.com/entry/6417730/event/9">
+                  <h3 class="table-team-name" >Nam FC</h3>
+                </a>
+                <a target="_blank" href="https://www.livefpl.net/6417730">
+                  <p class="table-user-name">Nam Morningstar</p>
+                </a>
+                <a target="_blank" style="    display: flex;align-items: center;">
+                    
+                    <p style="font-size:smaller">TV: 100.4</p>
+
+                    
+
+                  </a>
+                  
+                  <a target="_blank" style=" color:black;   display: flex;">
+                    <p>Live OR: 7,648,929</p>
+                    </a>
+                    
+
+                    
+                    <div id='div-gpt-ad-fpl-1' class="ads" style="align-items:unset!important;max-width:80%!important;margin-left:-80%!important"></div>
+                    
+
+                    
+
+                    
+              </td>
+
+                <td class="table-total" id="6417730_total">422</td>
+              <td class="table-gameweek" id="6417730_gw">62</td>
+              <td class="table-hits" id="6417730_hit">-24</tdclas>
+
+              <td class="table-chips" id="6417730_chip"> </td>
+              <td class="table-captain" id="6417730_cap">Watkins</td>
+              <td class="table-vice-captain" id="6417730_vc">Son</td>
+
+              <td>
+                <ul class="table-transfers">
+                    
+
+                          
+                          <li>Luis Díaz > Almirón</li>
+                          
+                          <li>Flekken > Turner</li>
+                          
+                          <li>Saliba > Andersen</li>
+                          
+                          <li>Disasi > Cash</li>
+                          
+                          <li>Mitoma > Son</li>
+                          
+                          <li>Diaby > Neto</li>
+                          
+                          <li>Chilwell > Dunk</li>
+                          
+                          <li>Estupiñan > Pedro Porro</li>
+                          
+
+                          
+
+                </ul>
+              </td>
+              <td class="table-chips" id="6417730_played">12/12</td>
+              
+                          
+                          
+                          <td style="display:none">*José Sá*,*Gabriel*,*Pedro Porro*,*Cash*,*Andersen*,*Almirón*,*Neto*,*Rodrigo*,*Son*,*Haaland*,*Watkins*,*Watkins*,</td>
+                          <td style="display:none">*Turner*,*J.Alvarez*,*Saka*,*Dunk*,</td>
+                          <td style="display:none">José Sá, Gabriel, Pedro Porro, Cash, Andersen, Almirón, Neto, Rodrigo, Son, Haaland, Watkins</td>
+                          <td style="display:none">Turner, J.Alvarez, Saka, Dunk</td>
+
+
+            </tr>
+
+            
+
+            <tr class ="clickable" id ="6991796" >
+              <td class="table-rank" data-order="8">8<img class="rank-svg" src="../static/caret-same.svg" alt="same-svg">
+              <p style="font-size:1rem">[8]</p>
+
+
+              </td>
+
+              <td style="text-align: right;">
+              
+              
+                          <svg
+
+                          onclick="favorite(event,6991796,'Duy Thái')"
+
+  width="20"
+  height="20"
+  viewBox="0 0 16 16"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    id="i_6991796"
+    class=svg-fav
+
+    d="M7.99998 14C7.79926 13.9997 7.60326 13.9391 7.43748 13.8259C4.98154 12.1587 3.91811 11.0156 3.33154 10.3009C2.08154 8.7775 1.48311 7.21344 1.49998 5.51969C1.51967 3.57875 3.07686 2 4.97123 2C6.34873 2 7.30279 2.77594 7.85842 3.42219C7.87602 3.44245 7.89777 3.4587 7.92219 3.46984C7.94661 3.48098 7.97314 3.48674 7.99998 3.48674C8.02682 3.48674 8.05335 3.48098 8.07778 3.46984C8.1022 3.4587 8.12394 3.44245 8.14154 3.42219C8.69717 2.77531 9.65123 2 11.0287 2C12.9231 2 14.4803 3.57875 14.5 5.52C14.5169 7.21406 13.9178 8.77813 12.6684 10.3013C12.0819 11.0159 11.0184 12.1591 8.56248 13.8263C8.39667 13.9393 8.20067 13.9998 7.99998 14V14Z"
+    fill="#676C72"
+  />
+</svg></td>
+<td  style="display:none" >8</td>
+              <td style="overflow-wrap: break-word;display:none">Duy Thái</td>
+                          <td style="display:none">thái</td>
+              <td>
+                <a target="_blank" href="https://fantasy.premierleague.com/entry/6991796/event/9">
+                  <h3 class="table-team-name" >thái</h3>
+                </a>
+                <a target="_blank" href="https://www.livefpl.net/6991796">
+                  <p class="table-user-name">Duy Thái</p>
+                </a>
+                <a target="_blank" style="    display: flex;align-items: center;">
+                    
+                    <p style="font-size:smaller">TV: 100.2 Yet: <p class="chip">WC1</p> <p class="chip">BB</p> <p class="chip">FH</p> <p class="chip">TC</p> </p>
+
+                    
+
+                  </a>
+                  
+                  <a target="_blank" style=" color:black;   display: flex;">
+                    <p>Live OR: 7,987,141</p>
+                    </a>
+                    
+
+                    
+
+                    
+
+                    
+              </td>
+
+                <td class="table-total" id="6991796_total">409</td>
+              <td class="table-gameweek" id="6991796_gw">52</td>
+              <td class="table-hits" id="6991796_hit">0</tdclas>
+
+              <td class="table-chips" id="6991796_chip"> </td>
+              <td class="table-captain" id="6991796_cap">Haaland</td>
+              <td class="table-vice-captain" id="6991796_vc">Darwin</td>
+
+              <td>
+                <ul class="table-transfers">
+                    
+
+                          
+
+                          
+
+                </ul>
+              </td>
+              <td class="table-chips" id="6991796_played">12/12</td>
+              
+                          
+                          
+                          <td style="display:none">*José Sá*,*T.Silva*,*Udogie*,*Cash*,*Sterling*,*Son*,*B.Fernandes*,*Foden*,*Vinícius*,*Darwin*,*Haaland*,*Haaland*,</td>
+                          <td style="display:none">*Sanchez*,*Dawson*,*Ream*,*Szoboszlai*,</td>
+                          <td style="display:none">José Sá, T.Silva, Udogie, Cash, Sterling, Son, B.Fernandes, Foden, Vinícius, Darwin, Haaland</td>
+                          <td style="display:none">Sanchez, Dawson, Ream, Szoboszlai</td>
+
+
+            </tr>
+
+            
+
+
+          </tbody>
+
+
+
+        </table>
+        
+        
+            <table style="display:none">
+            <tr  id ="3171756_child" style="background-color: #ced4da;">
+              <td colspan="100%" style="width:1%" class="table-players">
+
+                <ul class="table-player-all">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_0">
+
+<img class="table-club-shirt" src="../static/new_logos2/16.png" alt="club shirt">
+
+<p class=" label_*Turner* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Turner</h5>
+<p class="table-player-percent  base *Turner*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_1">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Udogie* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Udogie</h5>
+<p class="table-player-percent  base *Udogie*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_2">
+
+<img class="table-club-shirt" src="../static/new_logos2/2.png" alt="club shirt">
+
+<p class=" label_*Cash* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Cash</h5>
+<p class="table-player-percent  base *Cash*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_3">
+
+<img class="table-club-shirt" src="../static/new_logos2/15.png" alt="club shirt">
+
+<p class=" label_*Burn* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Burn</h5>
+<p class="table-player-percent  base *Burn*">0%</p>
+
+<p class="table-player-played"> 6  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_4">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Haaland* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Haaland</h5>
+<p class="table-player-percent  base *Haaland*">0%</p>
+
+<p class="table-player-played"> 8  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_5">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Maddison* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Maddison</h5>
+<p class="table-player-percent  base *Maddison*">0%</p>
+
+<p class="table-player-played"> 9  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_6">
+
+<img class="table-club-shirt" src="../static/new_logos2/20.png" alt="club shirt">
+
+<p class=" label_*Neto* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Neto</h5>
+<p class="table-player-percent  base *Neto*">0%</p>
+
+<p class="table-player-played"> 4  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_7">
+
+<img class="table-club-shirt" src="../static/new_logos2/11.png" alt="club shirt">
+
+<p class=" label_*Salah* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Salah</h5>
+<p class="table-player-percent  base *Salah*">0%</p>
+
+<p class="table-player-played"> 16  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_8">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Son* label_cap" style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Son (C) </h5>
+<p class="table-player-percent  base *Son*">0%</p>
+
+<p class="table-player-played"> 28   </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_9">
+
+<img class="table-club-shirt" src="../static/new_logos2/3.png" alt="club shirt">
+
+<p class=" label_*Solanke* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Solanke</h5>
+<p class="table-player-percent  base *Solanke*">0%</p>
+
+<p class="table-player-played"> 7  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_10">
+
+<img class="table-club-shirt" src="../static/new_logos2/2.png" alt="club shirt">
+
+<p class=" label_*Watkins* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Watkins</h5>
+<p class="table-player-percent  base *Watkins*">0%</p>
+
+<p class="table-player-played"> 11  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_11">
+
+<img class="table-club-shirt" src="../static/new_logos2/10.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Leno</h5>
+<p class="table-player-percent  base *Leno*">0%</p>
+
+<p class="table-player-bench"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_12">
+
+<img class="table-club-shirt" src="../static/new_logos2/12.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Andersen</h5>
+<p class="table-player-percent  base *Andersen*">0%</p>
+
+<p class="table-player-bench"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_13">
+
+<img class="table-club-shirt" src="../static/new_logos2/10.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Andreas</h5>
+<p class="table-player-percent  base *Andreas*">0%</p>
+
+<p class="table-player-bench"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="3171756_14">
+
+<img class="table-club-shirt" src="../static/new_logos2/12.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Kaboré</h5>
+<p class="table-player-percent  base *Kaboré*">0%</p>
+
+<p class="table-player-bench"> 1  </p>
+
+</li>
+
+                    
+
+                </ul>
+
+
+              </td>
+
+            </tr></table>
+            <table style="display:none">
+            <tr  id ="5967497_child" style="background-color: #ced4da;">
+              <td colspan="100%" style="width:1%" class="table-players">
+
+                <ul class="table-player-all">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_0">
+
+<img class="table-club-shirt" src="../static/new_logos2/20.png" alt="club shirt">
+
+<p class=" label_*José Sá* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">José Sá</h5>
+<p class="table-player-percent  base *José Sá*">0%</p>
+
+<p class="table-player-played"> 3  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_1">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Akanji* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Akanji</h5>
+<p class="table-player-percent  base *Akanji*">0%</p>
+
+<p class="table-player-played"> -1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_2">
+
+<img class="table-club-shirt" src="../static/new_logos2/19.png" alt="club shirt">
+
+<p class=" label_*Zouma* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Zouma</h5>
+<p class="table-player-percent  base *Zouma*">0%</p>
+
+<p class="table-player-played"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_3">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Aké* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Aké</h5>
+<p class="table-player-percent  base *Aké*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_4">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Pedro Porro* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Pedro Porro</h5>
+<p class="table-player-percent  base *Pedro Porro*">0%</p>
+
+<p class="table-player-played"> 6  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_5">
+
+<img class="table-club-shirt" src="../static/new_logos2/15.png" alt="club shirt">
+
+<p class=" label_*Burn* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Burn</h5>
+<p class="table-player-percent  base *Burn*">0%</p>
+
+<p class="table-player-played"> 6  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_6">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Son* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Son</h5>
+<p class="table-player-percent  base *Son*">0%</p>
+
+<p class="table-player-played"> 14  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_7">
+
+<img class="table-club-shirt" src="../static/new_logos2/7.png" alt="club shirt">
+
+<p class=" label_*Sterling* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Sterling</h5>
+<p class="table-player-percent  base *Sterling*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_8">
+
+<img class="table-club-shirt" src="../static/new_logos2/4.png" alt="club shirt">
+
+<p class=" label_*Mbeumo* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Mbeumo</h5>
+<p class="table-player-percent  base *Mbeumo*">0%</p>
+
+<p class="table-player-played"> 14  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_9">
+
+<img class="table-club-shirt" src="../static/new_logos2/2.png" alt="club shirt">
+
+<p class=" label_*Watkins* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Watkins</h5>
+<p class="table-player-percent  base *Watkins*">0%</p>
+
+<p class="table-player-played"> 11  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_10">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Haaland* label_cap" style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Haaland (C) </h5>
+<p class="table-player-percent  base *Haaland*">0%</p>
+
+<p class="table-player-played"> 16   </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_11">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Vicario</h5>
+<p class="table-player-percent  base *Vicario*">0%</p>
+
+<p class="table-player-bench"> 6  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_12">
+
+<img class="table-club-shirt" src="../static/new_logos2/5.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">March</h5>
+<p class="table-player-percent  base *March*">0%</p>
+
+<p class="table-player-bench"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_13">
+
+<img class="table-club-shirt" src="../static/new_logos2/1.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Nketiah</h5>
+<p class="table-player-percent  base *Nketiah*">0%</p>
+
+<p class="table-player-bench"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5967497_14">
+
+<img class="table-club-shirt" src="../static/new_logos2/8.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Eze</h5>
+<p class="table-player-percent  base *Eze*">0%</p>
+
+<p class="table-player-bench"> 0  </p>
+
+</li>
+
+                    
+
+                </ul>
+
+
+              </td>
+
+            </tr></table>
+            <table style="display:none">
+            <tr  id ="5912797_child" style="background-color: #ced4da;">
+              <td colspan="100%" style="width:1%" class="table-players">
+
+                <ul class="table-player-all">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_0">
+
+<img class="table-club-shirt" src="../static/new_logos2/10.png" alt="club shirt">
+
+<p class=" label_*Leno* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Leno</h5>
+<p class="table-player-percent  base *Leno*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_1">
+
+<img class="table-club-shirt" src="../static/new_logos2/7.png" alt="club shirt">
+
+<p class=" label_*T.Silva* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">T.Silva</h5>
+<p class="table-player-percent  base *T.Silva*">0%</p>
+
+<p class="table-player-played"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_2">
+
+<img class="table-club-shirt" src="../static/new_logos2/1.png" alt="club shirt">
+
+<p class=" label_*White* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">White</h5>
+<p class="table-player-percent  base *White*">0%</p>
+
+<p class="table-player-played"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_3">
+
+<img class="table-club-shirt" src="../static/new_logos2/1.png" alt="club shirt">
+
+<p class=" label_*Saliba* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Saliba</h5>
+<p class="table-player-percent  base *Saliba*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_4">
+
+<img class="table-club-shirt" src="../static/new_logos2/1.png" alt="club shirt">
+
+<p class=" label_*Saka* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Saka</h5>
+<p class="table-player-percent  base *Saka*">0%</p>
+
+<p class="table-player-played"> 5  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_5">
+
+<img class="table-club-shirt" src="../static/new_logos2/2.png" alt="club shirt">
+
+<p class=" label_*Zaniolo* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Zaniolo</h5>
+<p class="table-player-percent  base *Zaniolo*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_6">
+
+<img class="table-club-shirt" src="../static/new_logos2/20.png" alt="club shirt">
+
+<p class=" label_*Neto* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Neto</h5>
+<p class="table-player-percent  base *Neto*">0%</p>
+
+<p class="table-player-played"> 4  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_7">
+
+<img class="table-club-shirt" src="../static/new_logos2/11.png" alt="club shirt">
+
+<p class=" label_*Salah* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Salah</h5>
+<p class="table-player-percent  base *Salah*">0%</p>
+
+<p class="table-player-played"> 16  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_8">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*J.Alvarez* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">J.Alvarez</h5>
+<p class="table-player-percent  base *J.Alvarez*">0%</p>
+
+<p class="table-player-played"> 9  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_9">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Haaland* label_cap" style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Haaland (C) </h5>
+<p class="table-player-percent  base *Haaland*">0%</p>
+
+<p class="table-player-played"> 16   </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_10">
+
+<img class="table-club-shirt" src="../static/new_logos2/15.png" alt="club shirt">
+
+<p class=" label_*Isak* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Isak</h5>
+<p class="table-player-percent  base *Isak*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_11">
+
+<img class="table-club-shirt" src="../static/new_logos2/11.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">A.Becker</h5>
+<p class="table-player-percent  base *A.Becker*">0%</p>
+
+<p class="table-player-bench"> 8  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_12">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Gvardiol</h5>
+<p class="table-player-percent  base *Gvardiol*">0%</p>
+
+<p class="table-player-bench"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_13">
+
+<img class="table-club-shirt" src="../static/new_logos2/7.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Enzo</h5>
+<p class="table-player-percent  base *Enzo*">0%</p>
+
+<p class="table-player-bench"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5912797_14">
+
+<img class="table-club-shirt" src="../static/new_logos2/5.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Lamptey</h5>
+<p class="table-player-percent  base *Lamptey*">0%</p>
+
+<p class="table-player-bench"> 0  </p>
+
+</li>
+
+                    
+
+                </ul>
+
+
+              </td>
+
+            </tr></table>
+            <table style="display:none">
+            <tr  id ="7607842_child" style="background-color: #ced4da;">
+              <td colspan="100%" style="width:1%" class="table-players">
+
+                <ul class="table-player-all">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_0">
+
+<img class="table-club-shirt" src="../static/new_logos2/20.png" alt="club shirt">
+
+<p class=" label_*José Sá* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">José Sá</h5>
+<p class="table-player-percent  base *José Sá*">0%</p>
+
+<p class="table-player-played"> 3  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_1">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Van de Ven* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Van de Ven</h5>
+<p class="table-player-percent  base *Van de Ven*">0%</p>
+
+<p class="table-player-played"> 6  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_2">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Gvardiol* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Gvardiol</h5>
+<p class="table-player-percent  base *Gvardiol*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_3">
+
+<img class="table-club-shirt" src="../static/new_logos2/15.png" alt="club shirt">
+
+<p class=" label_*Trippier* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Trippier</h5>
+<p class="table-player-percent  base *Trippier*">0%</p>
+
+<p class="table-player-played"> 10  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_4">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Foden* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Foden</h5>
+<p class="table-player-percent  base *Foden*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_5">
+
+<img class="table-club-shirt" src="../static/new_logos2/1.png" alt="club shirt">
+
+<p class=" label_*Rice* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Rice</h5>
+<p class="table-player-percent  base *Rice*">0%</p>
+
+<p class="table-player-played"> 9  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_6">
+
+<img class="table-club-shirt" src="../static/new_logos2/19.png" alt="club shirt">
+
+<p class=" label_*Ward-Prowse* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Ward-Prowse</h5>
+<p class="table-player-percent  base *Ward-Prowse*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_7">
+
+<img class="table-club-shirt" src="../static/new_logos2/14.png" alt="club shirt">
+
+<p class=" label_*Rashford* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Rashford</h5>
+<p class="table-player-percent  base *Rashford*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_8">
+
+<img class="table-club-shirt" src="../static/new_logos2/2.png" alt="club shirt">
+
+<p class=" label_*Watkins* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Watkins</h5>
+<p class="table-player-percent  base *Watkins*">0%</p>
+
+<p class="table-player-played"> 11  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_9">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Haaland* label_cap" style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Haaland (C) </h5>
+<p class="table-player-percent  base *Haaland*">0%</p>
+
+<p class="table-player-played"> 16   </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_10">
+
+<img class="table-club-shirt" src="../static/new_logos2/11.png" alt="club shirt">
+
+<p class=" label_*Darwin* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Darwin</h5>
+<p class="table-player-percent  base *Darwin*">0%</p>
+
+<p class="table-player-played"> 4  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_11">
+
+<img class="table-club-shirt" src="../static/new_logos2/12.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Shea</h5>
+<p class="table-player-percent  base *Shea*">0%</p>
+
+<p class="table-player-bench"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_12">
+
+<img class="table-club-shirt" src="../static/new_logos2/19.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Zouma</h5>
+<p class="table-player-percent  base *Zouma*">0%</p>
+
+<p class="table-player-bench"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_13">
+
+<img class="table-club-shirt" src="../static/new_logos2/5.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Mitoma</h5>
+<p class="table-player-percent  base *Mitoma*">0%</p>
+
+<p class="table-player-bench"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7607842_14">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Pedro Porro</h5>
+<p class="table-player-percent  base *Pedro Porro*">0%</p>
+
+<p class="table-player-bench"> 6  </p>
+
+</li>
+
+                    
+
+                </ul>
+
+
+              </td>
+
+            </tr></table>
+            <table style="display:none">
+            <tr  id ="5974271_child" style="background-color: #ced4da;">
+              <td colspan="100%" style="width:1%" class="table-players">
+
+                <ul class="table-player-all">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_0">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Vicario* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Vicario</h5>
+<p class="table-player-percent  base *Vicario*">0%</p>
+
+<p class="table-player-played"> 6  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_1">
+
+<img class="table-club-shirt" src="../static/new_logos2/9.png" alt="club shirt">
+
+<p class=" label_*Tarkowski* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Tarkowski</h5>
+<p class="table-player-percent  base *Tarkowski*">0%</p>
+
+<p class="table-player-played"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_2">
+
+<img class="table-club-shirt" src="../static/new_logos2/15.png" alt="club shirt">
+
+<p class=" label_*Trippier* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Trippier</h5>
+<p class="table-player-percent  base *Trippier*">0%</p>
+
+<p class="table-player-played"> 10  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_3">
+
+<img class="table-club-shirt" src="../static/new_logos2/1.png" alt="club shirt">
+
+<p class=" label_*Saliba* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Saliba</h5>
+<p class="table-player-percent  base *Saliba*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_4">
+
+<img class="table-club-shirt" src="../static/new_logos2/4.png" alt="club shirt">
+
+<p class=" label_*Mbeumo* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Mbeumo</h5>
+<p class="table-player-percent  base *Mbeumo*">0%</p>
+
+<p class="table-player-played"> 14  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_5">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Foden* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Foden</h5>
+<p class="table-player-percent  base *Foden*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_6">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Maddison* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Maddison</h5>
+<p class="table-player-percent  base *Maddison*">0%</p>
+
+<p class="table-player-played"> 9  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_7">
+
+<img class="table-club-shirt" src="../static/new_logos2/5.png" alt="club shirt">
+
+<p class=" label_*Mitoma* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Mitoma</h5>
+<p class="table-player-percent  base *Mitoma*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_8">
+
+<img class="table-club-shirt" src="../static/new_logos2/9.png" alt="club shirt">
+
+<p class=" label_*Calvert-Lewin* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Calvert-Lewin</h5>
+<p class="table-player-percent  base *Calvert-Lewin*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_9">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Haaland* label_cap" style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Haaland (C) </h5>
+<p class="table-player-percent  base *Haaland*">0%</p>
+
+<p class="table-player-played"> 16   </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_10">
+
+<img class="table-club-shirt" src="../static/new_logos2/4.png" alt="club shirt">
+
+<p class=" label_*Wissa* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Wissa</h5>
+<p class="table-player-percent  base *Wissa*">0%</p>
+
+<p class="table-player-played"> 8  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_11">
+
+<img class="table-club-shirt" src="../static/new_logos2/11.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">A.Becker</h5>
+<p class="table-player-percent  base *A.Becker*">0%</p>
+
+<p class="table-player-bench"> 8  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_12">
+
+<img class="table-club-shirt" src="../static/new_logos2/1.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Saka</h5>
+<p class="table-player-percent  base *Saka*">0%</p>
+
+<p class="table-player-bench"> 5  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_13">
+
+<img class="table-club-shirt" src="../static/new_logos2/5.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Estupiñan</h5>
+<p class="table-player-percent  base *Estupiñan*">0%</p>
+
+<p class="table-player-bench"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="5974271_14">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Udogie</h5>
+<p class="table-player-percent  base *Udogie*">0%</p>
+
+<p class="table-player-bench"> 1  </p>
+
+</li>
+
+                    
+
+                </ul>
+
+
+              </td>
+
+            </tr></table>
+            <table style="display:none">
+            <tr  id ="7976221_child" style="background-color: #ced4da;">
+              <td colspan="100%" style="width:1%" class="table-players">
+
+                <ul class="table-player-all">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_0">
+
+<img class="table-club-shirt" src="../static/new_logos2/16.png" alt="club shirt">
+
+<p class=" label_*Turner* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Turner</h5>
+<p class="table-player-percent  base *Turner*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_1">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Udogie* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Udogie</h5>
+<p class="table-player-percent  base *Udogie*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_2">
+
+<img class="table-club-shirt" src="../static/new_logos2/15.png" alt="club shirt">
+
+<p class=" label_*Trippier* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Trippier</h5>
+<p class="table-player-percent  base *Trippier*">0%</p>
+
+<p class="table-player-played"> 10  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_3">
+
+<img class="table-club-shirt" src="../static/new_logos2/8.png" alt="club shirt">
+
+<p class=" label_*Andersen* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Andersen</h5>
+<p class="table-player-percent  base *Andersen*">0%</p>
+
+<p class="table-player-played"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_4">
+
+<img class="table-club-shirt" src="../static/new_logos2/16.png" alt="club shirt">
+
+<p class=" label_*Gibbs-White* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Gibbs-White</h5>
+<p class="table-player-percent  base *Gibbs-White*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_5">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Son* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Son</h5>
+<p class="table-player-percent  base *Son*">0%</p>
+
+<p class="table-player-played"> 14  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_6">
+
+<img class="table-club-shirt" src="../static/new_logos2/20.png" alt="club shirt">
+
+<p class=" label_*Neto* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Neto</h5>
+<p class="table-player-percent  base *Neto*">0%</p>
+
+<p class="table-player-played"> 4  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_7">
+
+<img class="table-club-shirt" src="../static/new_logos2/15.png" alt="club shirt">
+
+<p class=" label_*Gordon* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Gordon</h5>
+<p class="table-player-percent  base *Gordon*">0%</p>
+
+<p class="table-player-played"> 8  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_8">
+
+<img class="table-club-shirt" src="../static/new_logos2/11.png" alt="club shirt">
+
+<p class=" label_*Darwin* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Darwin</h5>
+<p class="table-player-percent  base *Darwin*">0%</p>
+
+<p class="table-player-played"> 4  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_9">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Haaland* label_cap" style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Haaland (C) </h5>
+<p class="table-player-percent  base *Haaland*">0%</p>
+
+<p class="table-player-played"> 16   </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_10">
+
+<img class="table-club-shirt" src="../static/new_logos2/14.png" alt="club shirt">
+
+<p class=" label_*Højlund* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Højlund</h5>
+<p class="table-player-percent  base *Højlund*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_11">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Ederson M.</h5>
+<p class="table-player-percent  base *Ederson M.*">0%</p>
+
+<p class="table-player-bench"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_12">
+
+<img class="table-club-shirt" src="../static/new_logos2/19.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Bowen</h5>
+<p class="table-player-percent  base *Bowen*">0%</p>
+
+<p class="table-player-bench"> 8  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_13">
+
+<img class="table-club-shirt" src="../static/new_logos2/5.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Estupiñan</h5>
+<p class="table-player-percent  base *Estupiñan*">0%</p>
+
+<p class="table-player-bench"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="7976221_14">
+
+<img class="table-club-shirt" src="../static/new_logos2/7.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Chilwell</h5>
+<p class="table-player-percent  base *Chilwell*">0%</p>
+
+<p class="table-player-bench"> 0  </p>
+
+</li>
+
+                    
+
+                </ul>
+
+
+              </td>
+
+            </tr></table>
+            <table style="display:none">
+            <tr  id ="6417730_child" style="background-color: #ced4da;">
+              <td colspan="100%" style="width:1%" class="table-players">
+
+                <ul class="table-player-all">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_0">
+
+<img class="table-club-shirt" src="../static/new_logos2/20.png" alt="club shirt">
+
+<p class=" label_*José Sá* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">José Sá</h5>
+<p class="table-player-percent  base *José Sá*">0%</p>
+
+<p class="table-player-played"> 3  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_1">
+
+<img class="table-club-shirt" src="../static/new_logos2/1.png" alt="club shirt">
+
+<p class=" label_*Gabriel* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Gabriel</h5>
+<p class="table-player-percent  base *Gabriel*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_2">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Pedro Porro* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Pedro Porro</h5>
+<p class="table-player-percent  base *Pedro Porro*">0%</p>
+
+<p class="table-player-played"> 6  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_3">
+
+<img class="table-club-shirt" src="../static/new_logos2/2.png" alt="club shirt">
+
+<p class=" label_*Cash* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Cash</h5>
+<p class="table-player-percent  base *Cash*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_4">
+
+<img class="table-club-shirt" src="../static/new_logos2/8.png" alt="club shirt">
+
+<p class=" label_*Andersen* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Andersen</h5>
+<p class="table-player-percent  base *Andersen*">0%</p>
+
+<p class="table-player-played"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_5">
+
+<img class="table-club-shirt" src="../static/new_logos2/15.png" alt="club shirt">
+
+<p class=" label_*Almirón* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Almirón</h5>
+<p class="table-player-percent  base *Almirón*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_6">
+
+<img class="table-club-shirt" src="../static/new_logos2/20.png" alt="club shirt">
+
+<p class=" label_*Neto* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Neto</h5>
+<p class="table-player-percent  base *Neto*">0%</p>
+
+<p class="table-player-played"> 4  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_7">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Rodrigo* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Rodrigo</h5>
+<p class="table-player-percent  base *Rodrigo*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_8">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Son* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Son</h5>
+<p class="table-player-percent  base *Son*">0%</p>
+
+<p class="table-player-played"> 14  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_9">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Haaland* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Haaland</h5>
+<p class="table-player-percent  base *Haaland*">0%</p>
+
+<p class="table-player-played"> 8  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_10">
+
+<img class="table-club-shirt" src="../static/new_logos2/2.png" alt="club shirt">
+
+<p class=" label_*Watkins* label_cap" style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Watkins (C) </h5>
+<p class="table-player-percent  base *Watkins*">0%</p>
+
+<p class="table-player-played"> 22   </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_11">
+
+<img class="table-club-shirt" src="../static/new_logos2/16.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Turner</h5>
+<p class="table-player-percent  base *Turner*">0%</p>
+
+<p class="table-player-bench"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_12">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">J.Alvarez</h5>
+<p class="table-player-percent  base *J.Alvarez*">0%</p>
+
+<p class="table-player-bench"> 9  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_13">
+
+<img class="table-club-shirt" src="../static/new_logos2/1.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Saka</h5>
+<p class="table-player-percent  base *Saka*">0%</p>
+
+<p class="table-player-bench"> 5  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6417730_14">
+
+<img class="table-club-shirt" src="../static/new_logos2/5.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Dunk</h5>
+<p class="table-player-percent  base *Dunk*">0%</p>
+
+<p class="table-player-bench"> 1  </p>
+
+</li>
+
+                    
+
+                </ul>
+
+
+              </td>
+
+            </tr></table>
+            <table style="display:none">
+            <tr  id ="6991796_child" style="background-color: #ced4da;">
+              <td colspan="100%" style="width:1%" class="table-players">
+
+                <ul class="table-player-all">
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_0">
+
+<img class="table-club-shirt" src="../static/new_logos2/20.png" alt="club shirt">
+
+<p class=" label_*José Sá* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">José Sá</h5>
+<p class="table-player-percent  base *José Sá*">0%</p>
+
+<p class="table-player-played"> 3  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_1">
+
+<img class="table-club-shirt" src="../static/new_logos2/7.png" alt="club shirt">
+
+<p class=" label_*T.Silva* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">T.Silva</h5>
+<p class="table-player-percent  base *T.Silva*">0%</p>
+
+<p class="table-player-played"> 0  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_2">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Udogie* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Udogie</h5>
+<p class="table-player-percent  base *Udogie*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_3">
+
+<img class="table-club-shirt" src="../static/new_logos2/2.png" alt="club shirt">
+
+<p class=" label_*Cash* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Cash</h5>
+<p class="table-player-percent  base *Cash*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_4">
+
+<img class="table-club-shirt" src="../static/new_logos2/7.png" alt="club shirt">
+
+<p class=" label_*Sterling* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Sterling</h5>
+<p class="table-player-percent  base *Sterling*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_5">
+
+<img class="table-club-shirt" src="../static/new_logos2/18.png" alt="club shirt">
+
+<p class=" label_*Son* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Son</h5>
+<p class="table-player-percent  base *Son*">0%</p>
+
+<p class="table-player-played"> 14  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_6">
+
+<img class="table-club-shirt" src="../static/new_logos2/14.png" alt="club shirt">
+
+<p class=" label_*B.Fernandes* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">B.Fernandes</h5>
+<p class="table-player-percent  base *B.Fernandes*">0%</p>
+
+<p class="table-player-played"> 7  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_7">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Foden* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Foden</h5>
+<p class="table-player-percent  base *Foden*">0%</p>
+
+<p class="table-player-played"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_8">
+
+<img class="table-club-shirt" src="../static/new_logos2/10.png" alt="club shirt">
+
+<p class=" label_*Vinícius* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Vinícius</h5>
+<p class="table-player-percent  base *Vinícius*">0%</p>
+
+<p class="table-player-played"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_9">
+
+<img class="table-club-shirt" src="../static/new_logos2/11.png" alt="club shirt">
+
+<p class=" label_*Darwin* " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Darwin</h5>
+<p class="table-player-percent  base *Darwin*">0%</p>
+
+<p class="table-player-played"> 4  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_10">
+
+<img class="table-club-shirt" src="../static/new_logos2/13.png" alt="club shirt">
+
+<p class=" label_*Haaland* label_cap" style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Haaland (C) </h5>
+<p class="table-player-percent  base *Haaland*">0%</p>
+
+<p class="table-player-played"> 16   </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_11">
+
+<img class="table-club-shirt" src="../static/new_logos2/7.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Sanchez</h5>
+<p class="table-player-percent  base *Sanchez*">0%</p>
+
+<p class="table-player-bench"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_12">
+
+<img class="table-club-shirt" src="../static/new_logos2/20.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Dawson</h5>
+<p class="table-player-percent  base *Dawson*">0%</p>
+
+<p class="table-player-bench"> 2  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_13">
+
+<img class="table-club-shirt" src="../static/new_logos2/10.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Ream</h5>
+<p class="table-player-percent  base *Ream*">0%</p>
+
+<p class="table-player-bench"> 1  </p>
+
+</li>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="table-player" id="6991796_14">
+
+<img class="table-club-shirt" src="../static/new_logos2/11.png" alt="club shirt">
+
+<p class="  " style=" opacity:0; color:black; font-size: 20px;font-weight: 500; position: relative;bottom: 20%;width:30%;right:-35%;margin-bottom:-23%">&#11088;</p>
+
+
+<h5 class="table-player-name">Szoboszlai</h5>
+<p class="table-player-percent  base *Szoboszlai*">0%</p>
+
+<p class="table-player-bench"> 3  </p>
+
+</li>
+
+                    
+
+                </ul>
+
+
+              </td>
+
+            </tr></table> 
+      </div>
+    </div>
+  </section>
+  <div style="text-align:center">
+          <input type="submit" name="wrong" class="" style="font-size:larger;/* color: #fff; *//* background-color: #5bc0de; *//* width:50%; */" onClick="redownload()" value="Something looks wrong? re-download!">
+</div>
+  <!-- Footer -->
+    <style>
+    /* Footer Styles */
+.footer {
+  background-color: #35363c;
+  color: var(--white);
+  padding: 4.8rem 2.4rem 1.6rem 2.4rem;
+}
+
+.footer-w {
+  max-width: 112rem;
+  margin: 0 auto;
+}
+
+.footer-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-signup-text {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-signup-button {
+  border: none;
+  outline: none;
+  background-color: var(--green);
+  font-family: inherit;
+  margin: 0;
+  height: 4.8rem;
+  width: 17.6rem;
+  color: var(--white);
+}
+
+.footer-signup-button:hover {
+  background-color: var(--light-green);
+  color: var(--black);
+}
+
+.footer-img {
+  height: 3.2rem;
+  width: 18rem;
+}
+
+
+.footer-content {
+  margin: 4.8rem 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-content-items {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4.8rem;
+}
+
+.footer-content-items h4 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.footer-content-items a {
+  color: var(--dark-white);
+  padding: 0.8rem 0;
+  margin-top: 1rem;
+}
+
+.footer-content-items a:hover {
+  color: var(--light-green);
+}
+
+.footer-copyright {
+  text-align: center;
+  color: var(--darkest-white);
+}
+
+</style>
+  <section class="footer">
+    <div class="footer-w">
+      <div class="footer-header">
+        <!-- Footer Logo -->
+        <img class="footer-img" src="../static/livefpllogo.png" alt="logo" />
+
+
+        <!-- Get started text -->
+        
+        <div class="footer-signup">
+          <p class="footer-signup-text" style="float:left">Get free access to extra tools: Planner, Tracking Favorite Managers and more</p>
+          <br><button class="footer-signup-button" href="../signup" style="float:right">Sign Up!</button>
+        </div>
+
+      </div>
+      <!-- Footer Items -->
+      <a href="https://www.fantasyfootballscout.co.uk/the-scout-network/"><img style="width:20%" src="../static/scout-network-white.png" alt="FFS" /></a>
+      <div class="footer-content">
+        <!-- Live Tools -->
+        <div class="footer-content-items">
+          <h4>Live Tools</h4>
+          <a href="../rank">Live Rank</a>
+          <a href="../leagues">Live Leagues </a>
+          <a href="../games">Live Games & Bonus</a>
+          <a href="../whatif">What if? Rank for all Scenarios</a>
+          <a href="../autosubs">Live Auto-Subs</a>
+        </div>
+        <!-- Rabking Tools -->
+        <div class="footer-content-items">
+          <h4>Rank Tier Statistics</h4>
+          <a href="../EO">Effective Ownerships</a>
+            <a href="../chips">Chip Usage and Templates</a>
+          <a href="../top10k">Top10k Captains, Chips & EOs</a>
+          <a href="../top10k_ownership">Ownership Combinations in Top10k</a>
+          <a href="../dgw">Number of DGW/BGW Players in Ranks</a>
+          <a href="../Overall">Overall Captains, Chips & EOs</a>
+          <a href="../Overall_ownership">Ownership Combinations Overall</a>
+          <a href="../local">Managers Around You</a>
+          <a href="../rank_tiers">Compare Different Rank Tiers</a>
+        </div>
+        <!-- Advanced Tools -->
+        <div class="footer-content-items">
+          <h4>Planning Tools</h4>
+          <a href="../myteam">Transfer Planner</a>
+          <a href="../ticker">Season Ticker</a>
+          <a href="../turningpoint">Branch Off Your Team</a>
+        </div>
+        <!-- Company -->
+
+        <!-- Socials -->
+        <div class="footer-content-items">
+          <h4>Socials</h4>
+          <a href="https://twitter.com/LiveFPLnet">Twitter</a>
+
+        </div>
+      </div>
+
+      <!-- Copyright text -->
+      <div class="footer-copyright">
+        copyright 2022 @ liveFPL. All rights reserved.
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+
+
+var text1 = "Fantasy XXL";
+var id_global = -1;
+var html_global = ""
+var captains, starters, benchers;
+text1 = text1.replace(/&amp;/g, '&')
+var end = -1;
+
+$(document).ready(function() {
+
+if (1)
+{
+    var table = $('#livetable').DataTable(
+        {
+            dom: 'Bfrtip',
+            "paging": false,
+
+         "autoWidth": false,
+         buttons: [
+   {
+        extend: 'excel',
+        title: 'LiveFPL '+"Fantasy XXL"+' GW'+9,
+        text: 'Export Live Table to Excel',
+        className: 'btn btn-default',
+        exportOptions: {
+            columns: ':not(.notexport)'
+        }
+    }],
+
+    initComplete: function() {
+       	 var $buttons = $('.dt-buttons').hide();
+         }
+
+         ,
+            "oLanguage": {
+      "sLengthMenu": "Show _MENU_ resources",
+    },"order": [[ 0, "asc" ],[6, "desc" ]]
+        })
+        table2 =  $('#own').DataTable(
+
+
+            {"pageLength": 8,
+            "bDestroy": true,
+         "bLengthChange": false,
+         "autoWidth": false,
+            "oLanguage": {
+      "sLengthMenu": "Show _MENU_ resources",
+    },"order": [[ 4, "desc" ]]})
+
+
+       $(".clickable").click(function () {
+
+        var tr = $(this).closest('tr');
+        var row = table.row( tr );
+        var idz = $(this).attr('id');
+
+
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            htm = document.getElementById(idz+"_child").innerHTML
+            row.child( htm ,'table-players').show();
+            tr.addClass('shown');
+
+
+        }
+    } );
+
+     try
+        {
+            var tr = document.getElementById(id_global);
+            var row = table.row( tr );
+            htm = document.getElementById(id_global+"_child").innerHTML;
+            row.child( htm ,'table-players').show();
+            tr.addClass('shown');
+
+
+        }
+
+        catch(err)
+        {
+            console.log("bugz")
+
+        }
+
+calc(table);
+
+
+}
+    })
+
+function export2()
+{
+    //var table = $('#livetable').DataTable();
+            //table.colReorder.order([0,1,2,16,3,4,5,6,7,8,9,10,11,12,13,14,15], true);
+            console.log( document.getElementsByClassName("buttons-excel"))
+            var a = document.getElementsByClassName("buttons-excel")[0];
+            a.click();
+            //table.colReorder.order([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16], true);
+}
+
+function include_subs(flag)
+{
+     $.ajax({
+type: "POST",
+url: "/include_subs",
+data: JSON.stringify({ flag:flag }),
+contentType: 'application/json;charset=UTF-8',
+success:  function(html) {
+window.location.reload();
+}})
+}
+
+function compare(ha,val)
+{
+
+    var split = val.split(",");
+    var idz = split[0];
+    var row = split[1];
+    for (var j = 0; j < 15; j++)
+    {
+
+        player = document.getElementById(idz+"_"+j).outerHTML;
+
+        player = player.replaceAll('class="table-player-name"','class="table-player-name" style="width:14rem"')
+        document.getElementById("td-"+ha+"-"+j).innerHTML = player;
+        document.getElementById("td-"+ha+"2-"+j).innerHTML = player;
+    }
+    //console.log(player)
+    gw = parseInt(document.getElementById(idz+"_gw").innerText)
+    hit = parseInt(document.getElementById(idz+"_hit").innerText)
+    total = parseInt(document.getElementById(idz+"_total").innerText)
+    cap = (document.getElementById(idz+"_cap").innerText)
+    chip = (document.getElementById(idz+"_chip").innerText)
+    document.getElementById("th-"+ha).innerText ="Live: "+ gw +"("+hit+") = "+(gw+hit)+"\n Total: "+total+"\n Captain: "+cap+"\n Chip: "+chip
+    sort_comparison()
+
+}
+
+function sort_comparison()
+{
+
+        txt = document.getElementById("th-h").innerText;
+        if( txt.includes("BB"))
+        {
+            h_num = 15
+        }
+        else
+        {
+            h_num = 11
+        }
+        txt = document.getElementById("th-a").innerText;
+        if( txt.includes("BB"))
+        {
+            a_num = 15
+        }
+        else
+        {
+            a_num = 11
+        }
+
+        matches_h = [];
+        matches_a = [];
+
+        for (var j = 0; j < h_num; j++)
+    {
+        home = document.getElementById("td-h-"+j).innerText;
+        for (var k = 0; k < a_num; k++){
+
+        away = document.getElementById("td-a-"+k).innerText;
+        if (home==away)
+        {
+            matches_h.push(j);
+            matches_a.push(k);
+            break;
+        }
+    }}
+    console.log(matches_h)
+    c = 0;
+    for (var j = 0; j < h_num; j++)
+    {
+
+        if(!(matches_h.includes(j)))
+        {
+            document.getElementById("td-h2-"+c).innerHTML = document.getElementById("td-h-"+j).innerHTML
+            document.getElementById("td-h2-"+c).style.opacity="1"
+            c = c+1;
+        }
+    }
+    for (var j = 0; j < matches_h.length; j++)
+    {
+        f = matches_h[j]
+        document.getElementById("td-h2-"+c).innerHTML = document.getElementById("td-h-"+f).innerHTML;
+        document.getElementById("td-h2-"+c).style.opacity="0.2"
+        c = c+1;
+    }
+    if (h_num ==11)
+    {
+        for (var j = 11; j < 15; j++)
+    {
+
+        document.getElementById("td-h2-"+j).innerHTML = document.getElementById("td-h-"+j).innerHTML;
+        document.getElementById("td-h2-"+j).style.opacity="0.2"
+        c = c+1;
+    }
+    }
+    c = 0;
+    for (var j = 0; j < a_num; j++)
+    {
+        if(!(matches_a.includes(j)))
+        {
+            document.getElementById("td-a2-"+c).innerHTML = document.getElementById("td-a-"+j).innerHTML
+            document.getElementById("td-a2-"+c).style.opacity="1"
+            c = c+1;
+        }
+    }
+    for (var j = 0; j < matches_a.length; j++)
+    {
+        f = matches_a[j]
+        document.getElementById("td-a2-"+c).innerHTML = document.getElementById("td-a-"+f).innerHTML;
+        document.getElementById("td-a2-"+c).style.opacity="0.2"
+        c = c+1;
+    }
+    if (a_num ==11)
+    {
+        for (var j = 11; j < 15; j++)
+    {
+
+        document.getElementById("td-a2-"+j).innerHTML = document.getElementById("td-a-"+j).innerHTML;
+        document.getElementById("td-a2-"+j).style.opacity="0.2"
+        c = c+1;
+    }
+    }
+
+}
+    function calc(table,first_time = true)
+{
+    startSeconds=new Date().getSeconds();
+    console.log(startSeconds)
+
+    var EO = {}
+
+
+        captains = table
+    .column( 10 )
+    .data()
+    .unique();
+
+
+    var data  = table
+    .column( 10 )
+    .data()
+
+
+    var chips_data = table
+    .column( 9)
+    .data()
+
+
+
+if (end!=-1)
+{
+
+    captains = captains.filter((month,idx) => idx < end)
+
+    data = data.filter((month,idx) => idx < end)
+
+    chips_data = chips_data.filter((month,idx) => idx < end)
+
+}
+
+var total_managers = data.length;
+    var tc_indices = chips_data.map((e, i) => e === "TC" ? i : '').filter(String).toArray()
+    var occurances = captains.map(function(e) {
+  c = data.filter(i => i === e).length;
+  return c;
+});
+
+var res = data.filter(function (eachElem, index) {
+    return tc_indices.indexOf(index) != -1
+})
+
+
+ var tc_occurances = captains.map(function(e) {
+  c = res.filter(i => i === e).length;
+  return c;
+});
+
+var list = [];
+var tc_list = []
+var tc_captains = []
+var n = ""
+for (var j = 0; j < occurances.length; j++)
+    {
+
+        list.push({'name': occurances[j], 'age': captains[j]});
+    if (tc_occurances[j]>0)
+    {
+        tc_list.push({'name': tc_occurances[j], 'age': captains[j]})
+        tc_captains.push(captains[j])
+
+    }
+}
+
+list.sort(function(a, b) {
+    return ((a.name > b.name) ? -1 : ((a.name == b.name) ? 0 : 1));
+    //Sort could be modified to, for example, sort on the age
+    // if the name is the same.
+});
+var cap_EO = {}
+for (var k = 0; k < list.length; k++) {
+    occurances[k] = list[k].name;
+    captains[k] = list[k].age;
+    cap_EO["*"+list[k].age+"*"] = list[k].name;
+}
+
+tc_list.sort(function(a, b) {
+    return ((a.name > b.name) ? -1 : ((a.name == b.name) ? 0 : 1));
+    //Sort could be modified to, for example, sort on the age
+    // if the name is the same.
+});
+var tc_EO = {}
+for (var k = 0; k < tc_list.length; k++) {
+    tc_occurances[k] = tc_list[k].name;
+    tc_captains[k] = tc_list[k].age;
+    tc_EO["*"+tc_list[k].age+"*"] = tc_list[k].name;
+
+}
+
+Seconds=new Date().getSeconds();
+    if(Seconds+60 > startSeconds+71)
+    {console.log(Seconds,"aborted")
+        return}
+    else
+    {
+        console.log(Seconds,Seconds+60, startSeconds+71)
+    }
+//////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////
+
+    starters = table
+    .column( 14 )
+    .data()
+    .unique();
+
+if (end!=-1)
+{
+
+    starters = starters.filter((month,idx) => idx < end)
+
+
+}
+
+    starters = starters.map(function(e) {
+  c = e.split(",");
+  c.pop();
+  return c;
+});
+starters = [].concat.apply([], starters)
+starters2 = [...new Set(starters)];
+
+var occurances = starters2.map(function(e) {
+  c = starters.filter(i => i === e).length;
+  return c;
+});
+
+var start_EO = {}
+var list = [];
+for (var j = 0; j < occurances.length; j++)
+{
+    start_EO[starters2[j]]= occurances[j];
+    list.push({'name': occurances[j], 'age': starters2[j]});
+    if (!(starters2[j] in EO))
+        {
+            EO[starters2[j]] = 0;
+        }
+        EO[starters2[j]] +=occurances[j]
+}
+
+var started = occurances;
+
+//2) sort:
+list.sort(function(a, b) {
+    return ((a.name > b.name) ? -1 : ((a.name == b.name) ? 0 : 1));
+    //Sort could be modified to, for example, sort on the age
+    // if the name is the same.
+});
+
+//3) separate them back out:
+for (var k = 0; k < list.length; k++) {
+    occurances[k] = list[k].name;
+    starters2[k] = list[k].age;
+}
+starters2 = starters2.map(function(e) {
+  c = e.replace("*","").replace("*","");
+  return c;
+});
+
+starters = starters2;
+
+
+    benchers = table
+    .column( 15)
+    .data()
+    .unique();
+if (end!=-1)
+{
+
+    benchers = benchers.filter((month,idx) => idx < end)
+
+
+}
+
+    benchers = benchers.map(function(e) {
+  c = e.split(",");
+  c.pop();
+  return c;
+});
+benchers = [].concat.apply([], benchers)
+benchers2 = [...new Set(benchers)];
+
+var occurances = benchers2.map(function(e) {
+  c = benchers.filter(i => i === e).length;
+  return c;
+});
+
+
+var list = [];
+for (var j = 0; j < occurances.length; j++)
+    list.push({'name': occurances[j], 'age': benchers2[j]});
+
+//2) sort:
+list.sort(function(a, b) {
+    return ((a.name > b.name) ? -1 : ((a.name == b.name) ? 0 : 1));
+    //Sort could be modified to, for example, sort on the age
+    // if the name is the same.
+});
+
+//3) separate them back out:
+var bench_EO = {}
+for (var k = 0; k < list.length; k++) {
+    occurances[k] = list[k].name;
+    benchers2[k] = list[k].age;
+    bench_EO["*"+list[k].age+"*"] = list[k].name;
+    if ((!(list[k].age in EO)))
+    {
+        EO[list[k].age] = 0;
+        start_EO[list[k].age] = 0;
+    }
+
+}
+benchers2 = benchers2.map(function(e) {
+  c = e.replace("*","").replace("*","");
+  return c;
+});
+
+benchers = benchers2;
+
+    Object.keys(EO).map(function(key, index) {
+  EO[key] *= 100/total_managers;
+});
+
+
+    var l = "Fantasy XXL";
+html =""
+    if (total_managers <400)
+    {for (const [key, value] of Object.entries(EO)) {
+
+        k = key;
+        if (!(k in cap_EO))
+        {
+            cap_EO[k]=0;
+
+
+        }
+        if (!(k in tc_EO))
+        {
+
+            tc_EO[k]=0;
+
+        }
+        if (!("*"+k+"*" in bench_EO))
+        {
+
+            bench_EO["*"+k+"*"]=0;
+
+        }
+
+    ow = start_EO[k]-cap_EO[k]-tc_EO[k]+bench_EO["*"+k+"*"];
+
+    st = ow-bench_EO["*"+k+"*"];
+    html+="<tr><td>"+k.replace("*","").replace("*","")+"</td><td data-order='"+ow+"'>"+(ow)+" ("+(100*ow/total_managers).toFixed(1)+"%)</td><td data-order='"+st+"'>"+(st)+" ("+(100*st/total_managers).toFixed(1)+"%)";
+    html+="</td><td data-order='"+cap_EO[k]+"'>"+(cap_EO[k])+" ("+(100*cap_EO[k]/total_managers).toFixed(1)+"%)</td><td>"+value.toFixed(1)+"%</td></tr>"
+        //console.log(k,start_EO[k]-cap_EO[k]-tc_EO[k]+bench_EO[k],start_EO[k]-cap_EO[k]-tc_EO[k],cap_EO[k],value)
+
+Seconds=new Date().getSeconds();
+    if(Seconds+60 > startSeconds+71)
+    {//console.log(Seconds,"aborted")
+        return}
+    else
+    {
+        //console.log(Seconds,Seconds+60, startSeconds+71)
+    }
+
+
+   x=document.getElementsByClassName(key);  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    x[i].innerText=""+value.toFixed(1)+"%";    // Change the content
+    }
+
+    x=document.getElementsByClassName("img_"+key);  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    if(x[i].classList.contains("img_cap"))
+    {
+        mul = 200;
+    }
+    else
+    {
+        mul = 100;
+    }
+    diff = mul - value;
+    if(diff<0)
+    {
+        //x[i].innerHTML = "&#128373;";
+    }
+
+    else if (diff<25)
+    {
+        //x[i].innerHTML = "&#129335;";
+    }
+
+    else if (diff>75)
+    {
+        //x[i].innerHTML = "&#11088;";
+    }
+
+    }
+
+
+    x=document.getElementsByClassName("player_"+key);  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    if(x[i].classList.contains("player_cap"))
+    {
+        mul = 200;
+    }
+    else
+    {
+        mul = 100;
+    }
+    diff = mul - value;
+
+
+    if (diff>65)
+    {
+        x[i].style.border = "outset wheat";
+        //x[i].style.backgroundColor  = "#efefef";
+    }
+    else
+    {
+        x[i].style.border = "none";
+    }
+
+    }
+
+
+    x=document.getElementsByClassName("label_"+key);  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    if(x[i].classList.contains("label_cap"))
+    {
+
+        mul = 200;
+    }
+    else if(x[i].classList.contains("label_tcap"))
+    {
+
+        mul = 300;
+    }
+    else
+    {
+        mul = 100;
+    }
+    diff = mul - value;
+    if(diff<0)
+    {
+        x[i].innerHTML = "&#128373;";
+        x[i].style.opacity = "1";
+    }
+
+    else if (diff<25)
+    {
+        x[i].innerHTML = "&#128564;";
+        x[i].style.opacity = "1";
+    }
+
+    else if (diff>75)
+    {
+        x[i].innerHTML = "&#11088;"
+        x[i].style.opacity = "1";
+    }
+    else
+    {
+        x[i].style.opacity = "0";
+    }
+
+    }
+
+}}
+Seconds=new Date().getSeconds();
+    if(Seconds+60 > startSeconds+71)
+    {console.log(Seconds,"aborted")
+        return}
+    else
+    {
+        console.log(Seconds,Seconds+60, startSeconds+71)
+    }
+document.getElementById("ownership_table").innerHTML = html;
+html_global = html;
+
+const counts = {};
+
+
+Array.from(chips_data).map(el=>{
+  if(!counts[el]){
+    return counts[el]=Array.from(chips_data).filter(ob=>ob===el).length*100/total_managers
+     }
+  })
+var items = Object.keys(counts).map(function(key) {
+  return [key, counts[key]];
+});
+
+// Sort the array based on the second element
+items.sort(function(first, second) {
+  return second[1] - first[1];
+});
+
+
+ht = ""
+for (const [key, value] of Object.entries(items)) {
+    ht+= "<tr>"
+    keyz = value[0]
+    if (value[0] =="")
+    {
+        keyz = "None"
+    }
+  ht+="<td style='height:unset;padding:0;'>"+keyz+"</td><td style='height:unset;padding:0;'>"+value[1].toFixed(2)+"%</td>"
+  ht += "</tr>"
+}
+document.getElementById("chips_body").innerHTML = ht;
+
+Seconds=new Date().getSeconds();
+    if(Seconds+60 > startSeconds+71)
+    {console.log(Seconds,"aborted")
+        return}
+    else
+    {
+        console.log(Seconds,Seconds+60, startSeconds+71)
+    }
+   if (first_time)
+
+    {$('#second').empty();
+
+      Populate();
+
+    }
+
+Seconds=new Date().getSeconds();
+    if(Seconds+60 > startSeconds+71)
+    {console.log(Seconds,"aborted")
+        return}
+    else
+    {
+        console.log(Seconds,Seconds+60, startSeconds+71)
+    }
+}
+
+        function Populate()
+         {
+            var e = document.getElementById("first");
+            var first = e.options[e.selectedIndex].value;
+            var lst;
+            if (first =="c")
+            {
+                lst = captains;
+            }
+            else if (first =="s")
+
+            {
+                lst = starters;
+            }
+
+            else if (first =="b")
+
+            {
+                lst = benchers;
+            }
+
+            else if (first =="o")
+
+            {
+                lst = starters.concat(benchers);
+                lst = lst.filter((item, pos) => lst.indexOf(item) === pos)
+            }
+
+
+            $('#second').empty();
+    $('#second').append($('<option>', {
+        value: -1,
+        text : "Choose Player"
+    }));
+
+    $.each(lst, function (i, item) {
+    $('#second').append($('<option>', {
+        value: item,
+        text : item
+    }));
+});
+
+
+
+highlight();
+
+         }
+
+function change_end(v)
+{
+    end = v;
+     document.getElementById("third").value = v;
+      document.getElementById("third2").value = v;
+    var table = $('#livetable').DataTable();
+    calc(table,first_time=false);
+    clear_highlights();
+    highlight();
+    refresh();
+
+
+}
+
+function clear_highlights()
+{
+    var table = $('#livetable').DataTable();
+    table.rows().every(function(rowIdx, tableLoop, rowLoop){
+
+
+    var rowData = this.data();
+
+
+            try{
+            $(this.node()).removeClass("selected");
+            }
+            catch{}
+
+    }
+);
+
+}
+
+         function highlight()
+         {
+             if (end==-1)
+             {
+                 end_h = 100000000;
+             }
+             else
+             {
+                 end_h = end;
+             }
+             var table = $('#livetable').DataTable();
+
+
+             var e = document.getElementById("first");
+            var first = e.options[e.selectedIndex].value;
+            var e = document.getElementById("second");
+            var second = e.options[e.selectedIndex].value;
+
+            var c = 0
+            var all = 0
+             table.rows().every(function(rowIdx, tableLoop, rowLoop){
+
+                 if (rowIdx<end_h)
+                 {
+
+    var rowData = this.data();
+    all = all+1;
+        if (first=="c"){
+        if(rowData[10] == second ){
+            $(this.node()).addClass('selected');
+            c = c+1;
+        }
+
+        else
+        {
+            try{
+            $(this.node()).removeClass("selected");
+            }
+            catch{}
+        }}
+
+        else if (first=="s"){
+
+
+            if(rowData[14].includes("*"+second+"*") ){
+            $(this.node()).addClass('selected');
+            c = c+1;
+        }
+
+        else
+        {
+            try{
+            $(this.node()).removeClass("selected");
+            }
+            catch{}
+        }
+
+        }
+
+        else if (first=="b"){
+
+            if(rowData[15].includes("*"+second+"*") ){
+            $(this.node()).addClass('selected');
+            c = c+1;
+        }
+
+        else
+        {
+            try{
+            $(this.node()).removeClass("selected");
+            }
+            catch{}
+        }
+        }
+
+        else if (first=="o"){
+
+            if(rowData[15].includes("*"+second+"*") || rowData[14].includes("*"+second+"*") ){
+            $(this.node()).addClass('selected');
+            c = c+1;
+        }
+
+        else
+        {
+            try{
+            $(this.node()).removeClass("selected");
+            }
+            catch{}
+        }
+        }
+
+    }}
+);
+
+
+
+
+
+
+
+         var e = document.getElementById("count");
+         var p = 100*c/all;
+         e.innerText = "Count: "+c+"/"+all+" = "+p.toFixed(2)+"%";
+
+
+}
+
+  </script>
+  <script>
+
+
+function favorite2()
+{
+    idz = parseInt(document.getElementById("idz").value);
+    name = "id: "+idz;
+
+
+   $.ajax({
+type: "POST",
+url: "/favorite",
+data: JSON.stringify({idz:idz,remove:false}),
+contentType: 'application/json;charset=UTF-8',
+success:  function(html) {
+
+        if (html=="OK"){
+            window.location.reload();
+
+
+        }
+
+}})
+close_modal();
+}
+
+  function favorite(e,idz,name)
+{
+    var flag = ($("#i_"+idz).hasClass('red-svg'));
+    if (!flag){
+    var msgz = "Adding "+name+" to your tracked managers"}
+    else
+    {
+        var msgz = "Removing "+name+" from your tracked managers"}
+
+console.log(msgz)
+
+   $.ajax({
+type: "POST",
+url: "/favorite",
+data: JSON.stringify({idz:idz,remove:flag}),
+contentType: 'application/json;charset=UTF-8',
+success:  function(html) {
+
+        if (html=="OK"){
+
+            if(flag)
+            {
+            $("#i_"+idz).removeClass("red-svg");
+            }
+            else
+            {
+                                $("#i_"+idz).addClass("red-svg");
+
+            }
+
+        }
+
+}})
+e.stopPropagation();
+
+
+}
+
+function redownload()
+{
+     $.ajax({
+type: "POST",
+url: "/delete_league",
+data: JSON.stringify({}),
+contentType: 'application/json;charset=UTF-8',
+success:  function(html) {
+
+        if (html=="OK"){
+
+            window.location.reload()
+
+        }
+
+}})
+}
+function refresh()
+{
+    $('#own').DataTable().clear().destroy();
+      $('#ownership_table').html(html_global)
+
+        table2 =  $('#own').DataTable(
+
+
+            {"pageLength": 4,
+
+         "bLengthChange": false,
+         "autoWidth": false,
+            "oLanguage": {
+      "sLengthMenu": "Show _MENU_ resources",
+    },"order": [[ 4, "desc" ]]});
+}
+    var modal = document.getElementById("theModal");
+    var modal2 = document.getElementById("theModal2");
+
+    var open = document.getElementById("modalOpen");
+    var open2 = document.getElementById("modalOpen2");
+
+    var close = document.getElementsByClassName("close-modal")[0];
+    var close2 = document.getElementsByClassName("close-modal")[1];
+
+// Open button
+    open.onclick = function () {
+      modal.style.display = "block";
+
+    refresh();
+
+
+    }
+// The close button
+    close.onclick = function () {
+      modal.style.display = "none";
+    }
+// Clicking on any part of the screen outside the modal closes it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    // Open button
+    open2.onclick = function () {
+      modal2.style.display = "block";
+
+
+    }
+// The close button
+    close2.onclick = function () {
+      modal2.style.display = "none";
+    }
+// Clicking on any part of the screen outside the modal closes it
+    window.onclick = function (event) {
+      if (event.target == modal2) {
+        modal2.style.display = "none";
+      }
+    }
+  </script>
+  <!-- Script for IonIcons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

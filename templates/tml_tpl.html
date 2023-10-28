@@ -1,0 +1,39 @@
+<main>
+  <style>
+    h2 {
+      color: #006400;
+    }
+  </style>
+  <h2><center>Tathy Money League</center></h2>
+  <table id="data-table"></table>
+</main>
+
+
+  <script>
+    fetch('/tmlweek')
+      .then(response => response.json())
+      .then(data => {
+        const table = document.getElementById('data-table');
+        const headerRow = table.insertRow();
+        data[0].forEach(column => {
+          const headerCell = headerRow.insertCell();
+          headerCell.textContent = column;
+        });
+        data.slice(1).forEach(row => {
+          const tableRow = table.insertRow();
+          row.forEach((cell, index) => {
+            const tableCell = tableRow.insertCell();
+            tableCell.textContent = cell;
+            if (index > 0) {
+              const max = Math.max(...data.slice(1).map(row => parseInt(row[index])));
+              if (parseInt(cell) === max) {
+                tableCell.style.color = 'red';
+                tableCell.style.fontWeight = 'bold';
+              } else {
+                tableCell.style.color = 'gray';
+              }
+            }
+          });
+        });
+      });
+  </script>
