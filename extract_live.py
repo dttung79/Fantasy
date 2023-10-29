@@ -1,4 +1,4 @@
-from extract_file import extract_data
+from fantasy_util import extract_data
 
 
 if __name__ == "__main__":

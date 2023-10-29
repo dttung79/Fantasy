@@ -1,11 +1,14 @@
 <main>
-  <h2>Tathy Autumn League</h2>
+  <h2>Tathy Autumn League (Round | <a href=/autumn/table>Table</a>)</h2>
   <table id="league-table"></table>
   <style>
     h2 {
       text-align: center;
       font-size: 24px;
       margin-bottom: 20px;
+    }
+    a {
+      color: inherit;
     }
     table {
       border-collapse: collapse;
@@ -54,10 +57,10 @@
           score1Cell.textContent = row[2];
           const score2Cell = tableRow.insertCell();
           score2Cell.textContent = row[3];
-          if (row[2] > row[3]) {
+          if (row[2] - 2 > row[3]) {
             score1Cell.classList.add('greater-score');
             team1Cell.classList.add('greater-score-team');
-          } else if (row[3] > row[2]) {
+          } else if (row[3] - 2 > row[2]) {
             score2Cell.classList.add('greater-score');
             team2Cell.classList.add('greater-score-team');
           }

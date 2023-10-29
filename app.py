@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
-from extract_file import extract_data, team_week_names, live_url, match_round
-from extract_file import get_rounds, live_round
+from fantasy_util import extract_data, team_week_names, live_url, match_round
+from fantasy_util import get_rounds, live_round, league_table
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -19,7 +19,6 @@ def tmlweek():
     # Convert data to dictionary where key is row[1] and value is row[3]
     data = {row[1]: row[3] for row in data}
 
-    # Save the file
     f =  open('week.csv', 'r', encoding='utf-8-sig')
     lines = f.readlines()
     last_column = lines[0].split(',')[-1].strip()
@@ -39,7 +38,6 @@ def tmlweek():
     lines = [line.strip().split(',') for line in lines]
     # insert header to the first row
     lines.insert(0, header.strip().split(','))
-    print(lines)
     
     return jsonify(lines)
 
@@ -59,6 +57,13 @@ def autumnrounds():
 def autumnlive(week_no):
     return jsonify(live_round(live_url, week_no))
 
+@app.route('/autumn/table')
+def autumn_table():
+    return build_page('autumn_table_tpl.html')
+
+@app.route('/api/autumn/table')
+def autumn_table_api():
+    return jsonify(league_table('autumn'))
 
 def build_page(filename):
     head = render_template('header_tpl.html')
