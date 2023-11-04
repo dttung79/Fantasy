@@ -34,7 +34,7 @@ def get_teams_live(league, live_round):
     f.close()
     return [line.strip().split(',') for line in lines]
 
-# get all rounds in a league
+# get all rounds in a league by reading csv files in the league folder
 def get_rounds(league):
     csv_files = []
     for f in os.listdir(f'{root_dir}{league}'):
@@ -59,7 +59,7 @@ def live_scores_hits(url, teams):
 
 # get live round result
 def live_round(url, league, round_no):
-    # get teams name from round_no
+    # get teams name from round_no then get live scores
     team_match = get_teams_live(league, round_no)
     teams = []
     for team1, team2 in team_match:
