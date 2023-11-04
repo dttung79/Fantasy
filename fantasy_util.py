@@ -66,6 +66,10 @@ def live_round(url, league, round_no):
         teams.append(team1)
         teams.append(team2)
     team_scores = live_scores(url, teams)
+    
+    if len(team_scores) == 0: # if livefpl.net is not available
+        return []        
+    
     data = []
     for team1, team2 in team_match:
         data.append([team1, team2, team_scores[team1], team_scores[team2]])
@@ -74,30 +78,39 @@ def live_round(url, league, round_no):
 # extract data from livefpl.net url
 # data includes rank, team name, total points, live points, hits
 def extract_data(url_link, team_names):
-    # Access online link using requests, then save it to reconstructed_soup
-    response = requests.get(url_link)
-    reconstructed_soup = BeautifulSoup(response.content, 'html.parser')
-    
-    data = []
-    # Search for the row with the specified team name
-    for tr in reconstructed_soup.find_all('tr'):
-        cells = [td.get_text().strip() for td in tr.find_all('td')]
-        for team_name in team_names:
-            try:
-                if team_name in cells:
-                    data.append([int(cells[0].split()[0].split('\n')[0]), # rank
-                                cells[4],                                 # team name
-                                int(cells[6].strip()),                    # total points
-                                int(cells[7].strip()),                    # live points  
-                                int(cells[8].split()[0].strip())])        # hits
-            except Exception as e:
-                # append error message to log.txt
-                with open('log.txt', 'a') as f:
-                    f.write('Error type: extract team data\n')
-                    f.write(f'Source: {cells}\n')
-                    f.write(f'Error: {str(e)} \n')
-                    f.write('--------------------------------\n')
-    return data
+    try:
+        # Access online link using requests, then save it to reconstructed_soup
+        response = requests.get(url_link)
+        reconstructed_soup = BeautifulSoup(response.content, 'html.parser')
+        
+        data = []
+        # Search for the row with the specified team name
+        for tr in reconstructed_soup.find_all('tr'):
+            cells = [td.get_text().strip() for td in tr.find_all('td')]
+            for team_name in team_names:
+                try:
+                    if team_name in cells:
+                        data.append([int(cells[0].split()[0].split('\n')[0]), # rank
+                                    cells[4],                                 # team name
+                                    int(cells[6].strip()),                    # total points
+                                    int(cells[7].strip()),                    # live points  
+                                    int(cells[8].split()[0].strip())])        # hits
+                except Exception as e:
+                    # append error message to log.txt
+                    with open('log.txt', 'a') as f:
+                        f.write('Error type: extract team data\n')
+                        f.write(f'Source: {cells}\n')
+                        f.write(f'Error: {str(e)} \n')
+                        f.write('--------------------------------\n')
+        return data
+    except Exception as e:
+        # append error message to log.txt
+        with open('log.txt', 'a') as f:
+            f.write('Error type: access online link\n')
+            f.write(f'Source: {url_link}\n')
+            f.write(f'Error: {str(e)} \n')
+            f.write('--------------------------------\n')
+        return []
 
 # get league table
 # return table of rank, team name, wins, draws, losses, differences, league points, total fantasy points

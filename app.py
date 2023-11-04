@@ -16,6 +16,8 @@ def tml():
 def tmlweek():
     # columns = ['Rank', 'Team', 'GW Points', 'Total Points', 'Hits']
     data = extract_data(live_url, team_week_names)
+    if len(data) == 0:
+        return jsonify([])
     # Convert data to dictionary where key is row[1] and value is row[3]
     data = {row[1]: row[3] for row in data}
 
