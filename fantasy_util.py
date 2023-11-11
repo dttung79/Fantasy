@@ -41,6 +41,7 @@ def get_rounds(league):
         if f.endswith('.csv'):
             csv_files.append(int(f.split('.')[0]))
     csv_files.sort(reverse=True)
+    print(csv_files)
     return csv_files
 
 # get live scores of teams from livefpl.net url

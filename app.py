@@ -43,6 +43,33 @@ def tmlweek():
     
     return jsonify(lines)
 
+####### routes for autumn league #######
+@app.route('/winter')
+def winter():
+    return build_page('winter_tpl.html')
+
+@app.route('/winter/week/<int:week_no>')
+def winterweek(week_no):
+    return jsonify(match_round('winter', week_no))
+
+@app.route('/winter/rounds')
+def winterrounds():
+    return jsonify(get_rounds('winter'))
+
+@app.route('/winter/live/<int:week_no>')
+def winterlive(week_no):
+    return jsonify(live_round(live_url, week_no))
+
+@app.route('/winter/table')
+def winter_table():
+    return build_page('winter_table_tpl.html')
+
+@app.route('/api/winter/table')
+def winter_table_api():
+    return jsonify(league_table('winter'))
+
+
+####### routes for winter league #######
 @app.route('/autumn')
 def autumn():
     return build_page('autumn_tpl.html')
@@ -67,11 +94,15 @@ def autumn_table():
 def autumn_table_api():
     return jsonify(league_table('autumn'))
 
+
+####### general build page function #######
 def build_page(filename):
     head = render_template('header_tpl.html')
     content = render_template(filename)
     footer = render_template('footer_tpl.html')
     return head + '\n' + content + '\n' + footer
 
+
+####### main function #######
 if __name__ == '__main__':
     app.run(debug = True, host='0.0.0.0')
