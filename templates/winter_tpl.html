@@ -49,7 +49,7 @@
 </main>
 <script>
   function loadRoundData(round) {
-    if (round != 'undefined') {
+    if (round !== "undefined") {
     
       return fetch(`/winter/week/${round}`)
         .then(response => response.json())
@@ -75,7 +75,8 @@
           });
           return table;
         });
-      }
+    }
+
   }
 
   function loadRound(round1, round2) {
@@ -85,17 +86,24 @@
     const roundHeader1 = document.createElement('h3');
     roundHeader1.textContent = `Round ${round1}`;
     const roundHeader2 = document.createElement('h3');
-    roundHeader2.textContent = `Round ${round2}`;
     td1.appendChild(roundHeader1);
-    td2.appendChild(roundHeader2);
+    if (typeof round2 !== "undefined") {
+      roundHeader2.textContent = `Round ${round2}`;
+      td2.appendChild(roundHeader2);
+    }
     loadRoundData(round1)
       .then(table => {
         td1.appendChild(table);
       });
-    loadRoundData(round2)
-      .then(table => {
-        td2.appendChild(table);
-      });
+    if (typeof round2 !== "undefined") {
+      loadRoundData(round2)
+        .then(table => {
+          td2.appendChild(table);
+        });
+    } else {
+      const emptyTable = document.createElement('table');
+      td2.appendChild(emptyTable);
+    }
     container.appendChild(td1);
     container.appendChild(td2);
     return container;
