@@ -22,9 +22,10 @@ def match_round(league, round):
     f = open(f'{root_dir}{league}/{round}.csv', 'r', encoding='utf-8-sig')
     lines = f.readlines()
     f.close()
+    # if played round
     if len(lines[0].split(',')) == 4:
         return [line.strip().split(',') for line in lines]
-    
+    # live round
     return live_round(live_url, league, round)
 
 # get team names for live round
