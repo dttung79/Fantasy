@@ -96,27 +96,27 @@ def autumn_table_api():
 
 ####### routes for autumn league #######
 @app.route('/spring')
-def autumn():
+def spring():
     return build_page('spring_tpl.html')
 
 @app.route('/spring/week/<int:week_no>')
-def autumnweek(week_no):
+def springweek(week_no):
     return jsonify(match_round('spring', week_no))
 
 @app.route('/spring/rounds')
-def autumnrounds():
+def springrounds():
     return jsonify(get_rounds('spring'))
 
 @app.route('/spring/live/<int:week_no>')
-def autumnlive(week_no):
+def springlive(week_no):
     return jsonify(live_round(live_url, week_no))
 
 @app.route('/spring/table')
-def autumn_table():
+def spring_table():
     return build_page('spring_table_tpl.html')
 
 @app.route('/api/spring/table')
-def autumn_table_api():
+def spring_table_api():
     return jsonify(league_table('spring'))
 
 ####### general build page function #######
