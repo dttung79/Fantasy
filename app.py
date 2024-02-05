@@ -43,7 +43,7 @@ def tmlweek():
     
     return jsonify(lines)
 
-####### routes for autumn league #######
+####### routes for winter league #######
 @app.route('/winter')
 def winter():
     return build_page('winter_tpl.html')
@@ -69,7 +69,7 @@ def winter_table_api():
     return jsonify(league_table('winter'))
 
 
-####### routes for winter league #######
+####### routes for autumn league #######
 @app.route('/autumn')
 def autumn():
     return build_page('autumn_tpl.html')
@@ -94,6 +94,30 @@ def autumn_table():
 def autumn_table_api():
     return jsonify(league_table('autumn'))
 
+####### routes for autumn league #######
+@app.route('/spring')
+def autumn():
+    return build_page('spring_tpl.html')
+
+@app.route('/spring/week/<int:week_no>')
+def autumnweek(week_no):
+    return jsonify(match_round('spring', week_no))
+
+@app.route('/spring/rounds')
+def autumnrounds():
+    return jsonify(get_rounds('spring'))
+
+@app.route('/spring/live/<int:week_no>')
+def autumnlive(week_no):
+    return jsonify(live_round(live_url, week_no))
+
+@app.route('/spring/table')
+def autumn_table():
+    return build_page('spring_table_tpl.html')
+
+@app.route('/api/spring/table')
+def autumn_table_api():
+    return jsonify(league_table('spring'))
 
 ####### general build page function #######
 def build_page(filename):
