@@ -116,7 +116,7 @@ def extract_data(url_link, team_names):
 
 # get league table
 # return table of rank, team name, wins, draws, losses, differences, league points, total fantasy points
-def league_table(league):
+def get_league_table(league):
     rounds = get_rounds(league)
     table = {}
 

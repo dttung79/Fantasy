@@ -1,6 +1,6 @@
 <main>
     <center>
-        <h2>Tathy Winter League (<a href='/winter'>Round</a> | Table)</h2>
+        <h2>Tathy Winter League (<a href='/{{ league_name }}'>Round</a> | Table)</h2>
     </center>
     <style>
         h2 {
@@ -16,7 +16,8 @@
 </main>
 <script>
     const table = document.getElementById("league-table");
-    fetch('/api/winter/table')
+    url_to_fetch = `/api/{{ league_name }}/table`;
+    fetch(url_to_fetch)
         .then(response => response.json())
         .then(data => {
             const columns = data[0];

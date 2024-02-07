@@ -1,5 +1,5 @@
 <main>
-  <h2>Tathy Winter League (Round | <a href=/winter/table>Table</a>)</h2>
+  <h2>Tathy Winter League (Round | <a href="/{{ league_name }}/table">Table</a>)</h2>
   <table id="league-table"></table>
   <style>
     h2 {
@@ -48,10 +48,10 @@
   </style>
 </main>
 <script>
-  function loadRoundData(round) {
+  function loadRoundData(round, league_name) {
     if (round !== "undefined") {
-    
-      return fetch(`/winter/week/${round}`)
+      url_to_fetch = `/api/${league_name}/week/${round}`;
+      return fetch(url_to_fetch)
         .then(response => response.json())
         .then(data => {
           const table = document.createElement('table');
@@ -79,7 +79,7 @@
 
   }
 
-  function loadRound(round1, round2) {
+  function loadRound(round1, round2, league_name) {
     const container = document.createElement('tr');
     const td1 = document.createElement('td');
     const td2 = document.createElement('td');
@@ -91,12 +91,12 @@
       roundHeader2.textContent = `Round ${round2}`;
       td2.appendChild(roundHeader2);
     }
-    loadRoundData(round1)
+    loadRoundData(round1, league_name)
       .then(table => {
         td1.appendChild(table);
       });
     if (typeof round2 !== "undefined") {
-      loadRoundData(round2)
+      loadRoundData(round2, league_name)
         .then(table => {
           td2.appendChild(table);
         });
@@ -109,20 +109,21 @@
     return container;
   }
 
-  function loadRounds() {
-    fetch('/winter/rounds')
+  function loadRounds(league_name) {
+    url_to_fetch = `/api/${league_name}/rounds`;
+    fetch(url_to_fetch)
       .then(response => response.json())
       .then(rounds => {
         const tableContainer = document.getElementById('league-table');
         for (let i = 0; i < rounds.length; i += 2) {
           const round1 = rounds[i];
           const round2 = rounds[i + 1];
-          const roundContainer = loadRound(round1, round2);
+          const roundContainer = loadRound(round1, round2, league_name);
           tableContainer.appendChild(roundContainer);
         }
       })
       .catch(error => console.error(error));
   }
 
-  loadRounds();
+  loadRounds('{{ league_name }}');
 </script>
