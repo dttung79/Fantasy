@@ -11,6 +11,40 @@ def index():
 @app.route('/tml')
 def tml():
     return build_page('tml_tpl.html')
+@app.route('/tml/save')
+def tmlsave():
+    # columns = ['Rank', 'Team', 'GW Points', 'Total Points', 'Hits']
+    data = extract_data(live_url, team_week_names)
+    if len(data) == 0:
+        return jsonify([])
+    # Convert data to dictionary where key is row[1] and value is row[3]
+    data = {row[1]: row[3] for row in data}
+
+    f =  open('week.csv', 'r', encoding='utf-8-sig')
+    lines = f.readlines()
+    last_column = lines[0].split(',')[-1].strip()
+    new_column = 'W' + str(int(last_column[1:]) + 1)
+    header = lines[0].strip() + ',' + new_column + '\n'
+
+    week_table = {}
+    for i in range(1, len(lines)):
+        team_name = lines[i].split(',')[0]
+        points = lines[i].strip('\n').split(',')[1:]
+        week_table[team_name] = ','.join(points) + ',' + str(data[team_name])
+        # add new data to week_table
+    f.close()
+    # convert week_table to list of lines
+    lines = [f'{key},{value}\n' for key, value in week_table.items()]
+    # remove \n from each line then split by comma
+    lines = [line.strip().split(',') for line in lines]
+    # insert header to the first row
+    lines.insert(0, header.strip().split(','))
+    # save lines to week_update.csv
+    f = open('week.csv', 'w')
+    for line in lines:
+        f.write(','.join(line) + '\n')
+    f.close()
+    return build_page('tml_tpl.html')
 
 @app.route('/api/tmlweek')
 def tmlweek():
@@ -49,6 +83,7 @@ def tmlweek():
 @app.route('/<league_name>')
 def league(league_name):
     return build_league_page('league_tpl.html', league_name)
+
 
 # route to build league table page
 @app.route('/<league_name>/table')
