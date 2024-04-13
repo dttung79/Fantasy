@@ -1,5 +1,6 @@
 <main>
-  <h2>Tathy {{ league_name.title() }} League (Round | <a href="/{{ league_name }}/table">Table</a>)</h2>
+  <h2>Tathy {{ league_name.title() }} League (Round | <a href="/{{ league_name }}/table">Table</a>)
+  <img src="/static/loading.gif" alt="Loading..." style="width: 1%; height: auto;" /></h2>
   <table id="league-table"></table>
   <style>
     h2 {
@@ -76,7 +77,6 @@
           return table;
         });
     }
-
   }
 
   function loadRound(round1, round2, league_name) {
@@ -121,9 +121,12 @@
           const roundContainer = loadRound(round1, round2, league_name);
           tableContainer.appendChild(roundContainer);
         }
+        const loadingImage = document.querySelector('img[src="/static/loading.gif"]');
+        loadingImage.style.display = 'none';
       })
       .catch(error => console.error(error));
   }
 
   loadRounds('{{ league_name }}');
+  
 </script>

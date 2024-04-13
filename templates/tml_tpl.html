@@ -5,35 +5,80 @@
     }
   </style>
   <h2><center>Tathy Money League</center></h2>
-  <table id="data-table"></table>
+  <center><button id="toggle-button" onclick="toggleTables()">Loading ...</button></center>
+  <br/>
+  <table id="data-table-2"></table>
+  <table id="data-table" style="display: none;"></table>
+  
 </main>
 
-
-  <script>
-    fetch('/api/tmlweek')
-      .then(response => response.json())
-      .then(data => {
-        const table = document.getElementById('data-table');
-        const headerRow = table.insertRow();
-        data[0].forEach(column => {
-          const headerCell = headerRow.insertCell();
-          headerCell.textContent = column;
-        });
-        data.slice(1).forEach(row => {
-          const tableRow = table.insertRow();
-          row.forEach((cell, index) => {
-            const tableCell = tableRow.insertCell();
-            tableCell.textContent = cell;
-            if (index > 0) {
-              const max = Math.max(...data.slice(1).map(row => parseInt(row[index])));
-              if (parseInt(cell) === max) {
-                tableCell.style.color = 'red';
-                tableCell.style.fontWeight = 'bold';
-              } else {
-                tableCell.style.color = 'gray';
-              }
+<script>
+  fetch('/api/tmlweek')
+    .then(response => response.json())
+    .then(data => {
+      
+      const table = document.getElementById('data-table');
+      const table2 = document.getElementById('data-table-2');
+      const headerRow = table.insertRow();
+      const headerRow2 = table2.insertRow();
+      data[0].forEach((column, index) => {
+        const headerCell = headerRow.insertCell();
+        headerCell.textContent = column;
+        if (index === 0) {
+          const headerCell2 = headerRow2.insertCell();
+          headerCell2.textContent = column;
+        } else if (index > data[0].length - 11) {
+          const headerCell2 = headerRow2.insertCell();
+          headerCell2.textContent = column;
+        }
+      });
+      data.slice(1).forEach(row => {
+        const tableRow = table.insertRow();
+        const tableRow2 = table2.insertRow();
+        row.forEach((cell, index) => {
+          const tableCell = tableRow.insertCell();
+          tableCell.textContent = cell;
+          if (index === 0) {
+            const tableCell2 = tableRow2.insertCell();
+            tableCell2.textContent = cell;
+          } else if (index > row.length - 11) {
+            const tableCell2 = tableRow2.insertCell();
+            tableCell2.textContent = cell;
+            const max = Math.max(...data.slice(1).map(row => parseInt(row[index])));
+            if (parseInt(cell) === max) {
+              tableCell2.style.color = 'red';
+              tableCell2.style.fontWeight = 'bold';
+            } else {
+              tableCell2.style.color = 'gray';
             }
-          });
+          }
+          if (index > 0) {
+            const max = Math.max(...data.slice(1).map(row => parseInt(row[index])));
+            if (parseInt(cell) === max) {
+              tableCell.style.color = 'red';
+              tableCell.style.fontWeight = 'bold';
+            } else {
+              tableCell.style.color = 'gray';
+            }
+          }
         });
       });
-  </script>
+      const button = document.getElementById('toggle-button');
+      button.textContent = 'Show All';
+    });
+
+  function toggleTables() {
+    const table = document.getElementById('data-table');
+    const table2 = document.getElementById('data-table-2');
+    const button = document.getElementById('toggle-button');
+    if (table.style.display === 'none') {
+      table.style.display = 'table';
+      table2.style.display = 'none';
+      button.textContent = '10 last weeks';
+    } else {
+      table.style.display = 'none';
+      table2.style.display = 'table';
+      button.textContent = 'Show All';
+    }
+  }
+</script>
